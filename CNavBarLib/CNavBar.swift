@@ -14,6 +14,8 @@ public class CNavBar: UIView {
     let kCONTENT_XIB_NAME = "CNavBar"
     let MAXTIME : Float = 10.0
     var currentTime :Float = 0.0
+    let nibName:String = "CNavBar"
+    var view: UIView!
     
     @IBOutlet var outerContentView: UIView!
     @IBOutlet var innerContentView: UIView!
@@ -82,9 +84,12 @@ public class CNavBar: UIView {
     }
     
     public class func getScreen() -> CNavBar {
-        let xib = Bundle.main.loadNibNamed(String(describing :self), owner: self, options: nil)
-        let navBar = xib![0] as! CNavBar
-        return navBar
+//        let xib = Bundle.main.loadNibNamed(String(describing :self), owner: self, options: nil)
+//        let navBar = xib![0] as! CNavBar
+//        return navBar
+        
+        let me = loadFromNibNamed(nibNamed: String(describing :self))
+        return me as! CNavBar
     }
     
     @IBAction func userTappedRightButton(_ sender: Any) {
@@ -118,5 +123,12 @@ extension UIView
 {
     func getNavBarheight() -> Float {
         return Float(self.frame.size.height)
+    }
+    
+    class func loadFromNibNamed(nibNamed: String, bundle: Bundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiate(withOwner: self, options: nil)[0] as? UIView
     }
 }
