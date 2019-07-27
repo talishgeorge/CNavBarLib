@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CNavBar: UIView {
+public class CNavBar: UIView {
     
     let kCONTENT_XIB_NAME = "CNavBar"
     let MAXTIME : Float = 10.0
@@ -52,11 +52,11 @@ class CNavBar: UIView {
         //fixInView(self)
     }
     
-    func setBGColor() {
+    public func setBGColor() {
         self.outerContentView.backgroundColor = UIColor.init(hexString: "00bfff")
     }
     
-    func setupSafeAreaGuide(guide: UILayoutGuide) {
+    public func setupSafeAreaGuide(guide: UILayoutGuide) {
         if #available(iOS 11, *) {
             self.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
@@ -81,7 +81,7 @@ class CNavBar: UIView {
         return false
     }
     
-    class func getScreen() -> CNavBar {
+    public class func getScreen() -> CNavBar {
         let xib = Bundle.main.loadNibNamed(String(describing :self), owner: self, options: nil)
         let navBar = xib![0] as! CNavBar
         return navBar
@@ -95,7 +95,7 @@ class CNavBar: UIView {
         print("Hello left")
     }
     
-    func startProgress() {
+    public func startProgress() {
         prgressView.setProgress(currentTime, animated: true)
         perform(#selector(updateProgress), with: nil, afterDelay: 0.5)
     }
