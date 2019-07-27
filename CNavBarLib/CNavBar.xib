@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CNavBar" customModule="CustomNavBar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huK-AJ-r5q">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <color key="backgroundColor" red="0.62113656719999999" green="1" blue="0.59320201689999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="BZQ-3y-bER"/>
+                        <constraint firstAttribute="width" constant="414" id="t5f-jn-43V"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxv-AI-Tv7">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pw-TV-DP1">
+                            <rect key="frame" x="353" y="5" width="52" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="52" id="z7e-g5-FJs"/>
+                            </constraints>
+                            <state key="normal" title="Right"/>
+                            <connections>
+                                <action selector="userTappedRightButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="mTU-rf-oew"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6I-l4-kR3">
+                            <rect key="frame" x="186" y="12" width="42" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-Ly-qie">
+                            <rect key="frame" x="10" y="5" width="32" height="34"/>
+                            <state key="normal" title="Left"/>
+                            <connections>
+                                <action selector="userTappedLeftButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="cOJ-en-ron"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="GrW-CY-rec"/>
+                        <constraint firstItem="l6I-l4-kR3" firstAttribute="centerX" secondItem="uxv-AI-Tv7" secondAttribute="centerX" id="JKd-3H-sYF"/>
+                        <constraint firstItem="6Pw-TV-DP1" firstAttribute="centerY" secondItem="l6I-l4-kR3" secondAttribute="centerY" id="L2b-G2-CyX"/>
+                        <constraint firstItem="5Cs-zi-C3h" firstAttribute="trailing" secondItem="6Pw-TV-DP1" secondAttribute="trailing" constant="9" id="SBb-Cm-75W"/>
+                        <constraint firstItem="l6I-l4-kR3" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="Tkl-jr-Sld"/>
+                        <constraint firstItem="Cdo-Ly-qie" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="ZEX-Za-Qlj"/>
+                        <constraint firstItem="6Pw-TV-DP1" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="bj3-4W-GwM"/>
+                        <constraint firstAttribute="width" constant="414" id="e4c-Jl-Edk"/>
+                        <constraint firstItem="Cdo-Ly-qie" firstAttribute="leading" secondItem="5Cs-zi-C3h" secondAttribute="leading" constant="10" id="xSO-tq-TyR"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="5Cs-zi-C3h"/>
+                </view>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bs7-mB-4gr">
+                    <rect key="frame" x="0.0" y="88" width="414" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="Omj-o9-Q2V"/>
+                        <constraint firstAttribute="height" constant="2" id="w7V-Mm-Q0F"/>
+                    </constraints>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" red="0.81183209196891193" green="0.28349743127864913" blue="0.43905146173557602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="huK-AJ-r5q" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="2jI-Cx-LTX"/>
+                <constraint firstItem="uxv-AI-Tv7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Frl-X0-3Qi"/>
+                <constraint firstItem="bs7-mB-4gr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QWn-KO-AII"/>
+                <constraint firstItem="uxv-AI-Tv7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Whf-mq-FCa"/>
+                <constraint firstItem="bs7-mB-4gr" firstAttribute="top" secondItem="uxv-AI-Tv7" secondAttribute="bottom" id="Yde-Jk-fnC"/>
+                <constraint firstItem="uxv-AI-Tv7" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="aQ2-nu-860"/>
+                <constraint firstAttribute="bottom" secondItem="huK-AJ-r5q" secondAttribute="bottom" id="r9W-zW-3Am"/>
+                <constraint firstItem="huK-AJ-r5q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tpV-kD-6fd"/>
+                <constraint firstItem="huK-AJ-r5q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uaa-1I-roO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="innerContentView" destination="uxv-AI-Tv7" id="Szz-5p-yBT"/>
+                <outlet property="leftButton" destination="Cdo-Ly-qie" id="JqS-8y-TM4"/>
+                <outlet property="outerContentView" destination="huK-AJ-r5q" id="pRH-Bf-Rr7"/>
+                <outlet property="prgressView" destination="bs7-mB-4gr" id="WaM-Pd-cDm"/>
+                <outlet property="rightButton" destination="6Pw-TV-DP1" id="wFY-Fm-VOH"/>
+                <outlet property="titleLabel" destination="l6I-l4-kR3" id="Hrg-MD-OFD"/>
+            </connections>
+            <point key="canvasLocation" x="-191.30434782608697" y="3.3482142857142856"/>
+        </view>
+    </objects>
+</document>
