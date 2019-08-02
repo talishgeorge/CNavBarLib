@@ -51,7 +51,6 @@ class LoadingView: UIView {
         
         if !isAnimationRunning {
             self.isAnimationRunning = true
-            print(getNavBarheight())
             UIView.animate(withDuration: 0.5, delay:0, options: [], animations: {
                 let yPos = CGFloat(self.hasTopNotch())
                 self.frame = CGRect(x: 0, y: yPos, width: self.screenSize.width, height: self.height)
