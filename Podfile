@@ -6,5 +6,5 @@ target 'CNavBarLib' do
   use_frameworks!
 
   # Pods for CNavBarLib
-
+  pod 'SwiftLint'
 end

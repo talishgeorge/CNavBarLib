@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    convenience init(hexString: String, alpha:Float) {
+    convenience public init(hexString: String, alpha: Float) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)

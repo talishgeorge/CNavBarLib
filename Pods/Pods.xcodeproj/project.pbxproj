@@ -6,11 +6,33 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		8A90AF2D14089B4D021FEAD0921CD7FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		8E77C50034B6E7F00A25B596AD9674B3 /* Pods-CNavBarLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD30EC57A51FD5113B182FB1D8DD0BB /* Pods-CNavBarLib-dummy.m */; };
-		B0F9AB4F6F615CA3E7F45DF4F5CDC859 /* Pods-CNavBarLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3888FDE360574B6F49DB1D3B4F5AF224 /* Pods-CNavBarLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07A3F5353D924E11D4D6B3ADB0982E3A /* Pods-CNavBarLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3888FDE360574B6F49DB1D3B4F5AF224 /* Pods-CNavBarLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AB1B0E3E4D042038EF872F7DDD5A730 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		65E1E43FDE3D591FDC97EC0DDD7BB55A /* Pods-CNavBarLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD30EC57A51FD5113B182FB1D8DD0BB /* Pods-CNavBarLib-dummy.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74A33F1D3E937691404C1C1EDB157BA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0AFF368C839DDC34DADD40AEED2851C9 /* Pods-CNavBarLib-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CNavBarLib-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -21,17 +43,18 @@
 		3888FDE360574B6F49DB1D3B4F5AF224 /* Pods-CNavBarLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CNavBarLib-umbrella.h"; sourceTree = "<group>"; };
 		60B311776418B1A5D791DBC78510A728 /* Pods-CNavBarLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CNavBarLib.release.xcconfig"; sourceTree = "<group>"; };
 		7CA43A131DBC1FDDE5A45FDC437DA990 /* Pods_CNavBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CNavBarLib.framework; path = "Pods-CNavBarLib.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C08005A23BF5BD1F6714CA48A54033B4 /* Pods-CNavBarLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CNavBarLib-Info.plist"; sourceTree = "<group>"; };
 		ECD30EC57A51FD5113B182FB1D8DD0BB /* Pods-CNavBarLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CNavBarLib-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E40489F9AA2F887C8CF6AAA0B64C67EC /* Frameworks */ = {
+		90D78786A621AC812766B148A40AEED9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A90AF2D14089B4D021FEAD0921CD7FE /* Foundation.framework in Frameworks */,
+				2AB1B0E3E4D042038EF872F7DDD5A730 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +67,23 @@
 				7CA43A131DBC1FDDE5A45FDC437DA990 /* Pods_CNavBarLib.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
 		A492D7DAB8FD3323E0626F2E27FACEBC /* Pods-CNavBarLib */ = {
@@ -83,6 +123,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
 				22E5CC9DC9CE5283DCFF2554B8AC52FB /* Products */,
 				BEDA710B44F06686ADB12234F691F18B /* Targets Support Files */,
 			);
@@ -96,14 +137,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		062F635188AE5E7FF09D9086D3D383E1 /* Headers */ = {
+		B51B04E9E33860AED6C833D0A4DC4748 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0F9AB4F6F615CA3E7F45DF4F5CDC859 /* Pods-CNavBarLib-umbrella.h in Headers */,
+				07A3F5353D924E11D4D6B3ADB0982E3A /* Pods-CNavBarLib-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,16 +162,17 @@
 /* Begin PBXNativeTarget section */
 		6FFC98C226361012D34E0F6B0ABF169A /* Pods-CNavBarLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D6D518889E0810229FB2EC6BEB42E1A /* Build configuration list for PBXNativeTarget "Pods-CNavBarLib" */;
+			buildConfigurationList = 3DA601436999E4FDBECFF72B04E53FA3 /* Build configuration list for PBXNativeTarget "Pods-CNavBarLib" */;
 			buildPhases = (
-				062F635188AE5E7FF09D9086D3D383E1 /* Headers */,
-				BA4C39F8D4D70A09067071E4B3C830FA /* Sources */,
-				E40489F9AA2F887C8CF6AAA0B64C67EC /* Frameworks */,
-				13B3B34344E349846F1631F208B44F0A /* Resources */,
+				B51B04E9E33860AED6C833D0A4DC4748 /* Headers */,
+				0B9D59CD5E1368AA5E0076CAE101EC1D /* Sources */,
+				90D78786A621AC812766B148A40AEED9 /* Frameworks */,
+				82DFEEE63F26D56BFB905012E8E4964A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EE00B4C42C1CBEECE683799CC809DA38 /* PBXTargetDependency */,
 			);
 			name = "Pods-CNavBarLib";
 			productName = "Pods-CNavBarLib";
@@ -150,12 +201,13 @@
 			projectRoot = "";
 			targets = (
 				6FFC98C226361012D34E0F6B0ABF169A /* Pods-CNavBarLib */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		13B3B34344E349846F1631F208B44F0A /* Resources */ = {
+		82DFEEE63F26D56BFB905012E8E4964A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -165,15 +217,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BA4C39F8D4D70A09067071E4B3C830FA /* Sources */ = {
+		0B9D59CD5E1368AA5E0076CAE101EC1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E77C50034B6E7F00A25B596AD9674B3 /* Pods-CNavBarLib-dummy.m in Sources */,
+				65E1E43FDE3D591FDC97EC0DDD7BB55A /* Pods-CNavBarLib-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE00B4C42C1CBEECE683799CC809DA38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 74A33F1D3E937691404C1C1EDB157BA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
@@ -300,7 +361,7 @@
 			};
 			name = Release;
 		};
-		BB757D332436B7A45CA17628E26783CC /* Release */ = {
+		652C883667523C96906180D35B5131A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60B311776418B1A5D791DBC78510A728 /* Pods-CNavBarLib.release.xcconfig */;
 			buildSettings = {
@@ -339,7 +400,7 @@
 			};
 			name = Release;
 		};
-		FC5E762EEFC67857983A49AFDCB45DBD /* Debug */ = {
+		682509F31F68C22CCFC3A3A18DEE1707 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B4A14DCF67DA93F6DD70A3E33A0443E /* Pods-CNavBarLib.debug.xcconfig */;
 			buildSettings = {
@@ -377,9 +438,51 @@
 			};
 			name = Debug;
 		};
+		84D7C4574E8F0F3095623F0E06F5B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEED47E09AF743F48544C1C4FEADEF47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3DA601436999E4FDBECFF72B04E53FA3 /* Build configuration list for PBXNativeTarget "Pods-CNavBarLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				682509F31F68C22CCFC3A3A18DEE1707 /* Debug */,
+				652C883667523C96906180D35B5131A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -389,11 +492,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D6D518889E0810229FB2EC6BEB42E1A /* Build configuration list for PBXNativeTarget "Pods-CNavBarLib" */ = {
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC5E762EEFC67857983A49AFDCB45DBD /* Debug */,
-				BB757D332436B7A45CA17628E26783CC /* Release */,
+				DEED47E09AF743F48544C1C4FEADEF47 /* Debug */,
+				84D7C4574E8F0F3095623F0E06F5B402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
