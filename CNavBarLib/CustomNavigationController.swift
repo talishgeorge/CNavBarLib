@@ -79,7 +79,7 @@ public class CustomNavigationController: UIView {
         self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
     }
     public func setTransparency(alpha: Float) {
-        self.backgroundColor =  UIColor.black.withAlphaComponent(0.3)
+        self.backgroundColor =  NavBarConstants.transparentBGColor
         self.outerContentView.backgroundColor = UIColor.clear
         self.innerContentView.backgroundColor = UIColor.clear
         self.leftButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
@@ -88,10 +88,10 @@ public class CustomNavigationController: UIView {
         self.titleLabel.font = NavBarConstants.titleFont
     }
     public func setBGColorWithAlpha(alpha: Float) {
-        self.backgroundColor = NavBarConstants.barBackgroundColor
+        self.backgroundColor = NavBarConstants.barBGColor
         self.alpha = 1.0
-        self.outerContentView.backgroundColor = NavBarConstants.barBackgroundColor
-        self.innerContentView.backgroundColor = NavBarConstants.barBackgroundColor
+        self.outerContentView.backgroundColor = NavBarConstants.barBGColor
+        self.innerContentView.backgroundColor = NavBarConstants.barBGColor
         self.leftButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         self.rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         self.titleLabel.textColor = NavBarConstants.titleColor

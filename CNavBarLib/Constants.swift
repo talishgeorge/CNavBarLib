@@ -11,7 +11,8 @@ import UIKit
 
 public struct NavBarConstants {
     /// Specify this property to determine the navigation bar background color.
-    public static var barBackgroundColor: UIColor = UIColor.init(hexString: "#0074b1", alpha: 1.0)
+    public static var barBGColor: UIColor = UIColor.init(hexString: "#0074b1", alpha: 1.0)
+    public static var transparentBGColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     /// Specify this property to determine which title color that would be used
     /// at the midst of navigation bar.
     public static var titleColor: UIColor = UIColor.init(hexString: "#FFFFFF", alpha: 1.0)
