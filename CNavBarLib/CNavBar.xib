@@ -70,18 +70,6 @@
                                 <action selector="userTappedRightButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="mTU-rf-oew"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-5a-NXP" customClass="CustomProgressBar" customModule="CNavBarLib" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="40" width="414" height="4"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="4" id="gqe-yh-O79"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="loadingColor">
-                                    <color key="value" red="0.1599395254" green="0.2023321441" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -93,14 +81,11 @@
                         <constraint firstItem="l6I-l4-kR3" firstAttribute="centerX" secondItem="uxv-AI-Tv7" secondAttribute="centerX" id="L0Z-yI-DrK"/>
                         <constraint firstItem="Cdo-Ly-qie" firstAttribute="leading" secondItem="5Cs-zi-C3h" secondAttribute="leading" constant="10" id="N0O-ch-Dvy"/>
                         <constraint firstItem="5Cs-zi-C3h" firstAttribute="trailing" secondItem="6Pw-TV-DP1" secondAttribute="trailing" constant="9" id="SBb-Cm-75W"/>
-                        <constraint firstItem="3j4-5a-NXP" firstAttribute="leading" secondItem="uxv-AI-Tv7" secondAttribute="leading" id="VWa-XB-8Yx"/>
                         <constraint firstItem="5Cs-zi-C3h" firstAttribute="trailing" secondItem="yNS-sv-BWY" secondAttribute="trailing" constant="6" id="W93-6T-5mx"/>
-                        <constraint firstAttribute="trailing" secondItem="3j4-5a-NXP" secondAttribute="trailing" id="Ys3-Jm-7pn"/>
                         <constraint firstItem="6Pw-TV-DP1" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="bj3-4W-GwM"/>
                         <constraint firstItem="wz9-f4-tn1" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="dUt-Ms-7ye"/>
                         <constraint firstAttribute="width" constant="414" id="e4c-Jl-Edk"/>
                         <constraint firstItem="l6I-l4-kR3" firstAttribute="centerY" secondItem="uxv-AI-Tv7" secondAttribute="centerY" id="fZU-c9-YbE"/>
-                        <constraint firstAttribute="bottom" secondItem="3j4-5a-NXP" secondAttribute="bottom" id="tYd-As-7hD"/>
                         <constraint firstItem="wz9-f4-tn1" firstAttribute="leading" secondItem="5Cs-zi-C3h" secondAttribute="leading" constant="6" id="tzt-R5-YN8"/>
                         <constraint firstItem="l6I-l4-kR3" firstAttribute="centerX" secondItem="uxv-AI-Tv7" secondAttribute="centerX" id="zsE-eA-qfs"/>
                     </constraints>
@@ -124,7 +109,6 @@
                 <outlet property="leftButton" destination="Cdo-Ly-qie" id="JqS-8y-TM4"/>
                 <outlet property="leftNavButtonImage" destination="wz9-f4-tn1" id="yJ6-9o-xjh"/>
                 <outlet property="outerContentView" destination="huK-AJ-r5q" id="pRH-Bf-Rr7"/>
-                <outlet property="progressBar" destination="3j4-5a-NXP" id="GtZ-Ey-Cqd"/>
                 <outlet property="rightButton" destination="6Pw-TV-DP1" id="wFY-Fm-VOH"/>
                 <outlet property="rightNavBarButtonImage" destination="yNS-sv-BWY" id="VEZ-QC-W4l"/>
                 <outlet property="titleLabel" destination="l6I-l4-kR3" id="Hrg-MD-OFD"/>

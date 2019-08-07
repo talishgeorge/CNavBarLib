@@ -16,8 +16,13 @@ public class CustomNavigationController: UIView {
     public var onLeftButtonAction: ((_ success: Bool) -> Void)?
     public var onRightButtonAction: ((_ success: Bool) -> Void)?
     var timer: Timer?
-    var counter = 0.0
-    @IBOutlet weak var progressBar: CustomProgressBar!
+    var linearBar: LinearProgressBar = LinearProgressBar()
+    var horizontalProgressBar: HorizontalProgressbar = HorizontalProgressbar()
+    public var backgroundProgressBarColor: UIColor = UIColor.lightGray
+    public var progressBarColor: UIColor = UIColor.white
+    public var heightForLinearBar: CGFloat = 5
+    public var widthForLinearBar: CGFloat = 0
+    public var yPos: CGFloat = 0
     @IBOutlet weak var rightNavBarButtonImage: UIImageView!
     @IBOutlet weak var leftNavButtonImage: UIImageView!
     @IBOutlet var outerContentView: UIView!
@@ -28,7 +33,6 @@ public class CustomNavigationController: UIView {
     //This constructor/initializer will be called when we are creating view programmatically with init(frame: CGRect)
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        print("override init(frame: CGRect)")
     }
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,12 +43,14 @@ public class CustomNavigationController: UIView {
     }
 
     public func setupSafeAreaGuide(guide: UILayoutGuide) {
+        yPos = NavBarConstants.osXOffSet
         if #available(iOS 11, *) {
             //self.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
             self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
             if hasTopNotch == false {
-               self.heightAnchor.constraint(equalToConstant: 64).isActive = true
+               self.heightAnchor.constraint(equalToConstant: NavBarConstants.yOffSet).isActive = true
+                 yPos = NavBarConstants.yOffSet
             }
         } else {
             let standardSpacing: CGFloat = 0.0
@@ -74,7 +80,6 @@ public class CustomNavigationController: UIView {
     }
     public func configureNavBar() {
         setBGColorWithAlpha(alpha: 1.0)
-        hidePrgressBar()
         self.leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
         self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
     }
@@ -96,29 +101,33 @@ public class CustomNavigationController: UIView {
         self.rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         self.titleLabel.textColor = NavBarConstants.titleColor
         self.titleLabel.font = NavBarConstants.titleFont
-
     }
-    public func setupButtonView() {
-        progressBar.layer.cornerRadius = progressBar.frame.height / 2
-        progressBar.clipsToBounds = true
+    public func startLinearProgress() {
+        linearBar.heightForLinearBar = heightForLinearBar
+        linearBar.backgroundProgressBarColor = backgroundProgressBarColor
+        linearBar.progressBarColor = progressBarColor
+        linearBar.yPos = yPos
+        linearBar.startAnimating()
     }
-    public func startProgress() {
-        counter = 0.0
-        self.progressBar.isHidden = false
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self,
-                                     selector: #selector(update), userInfo: nil,
-                                     repeats: true)
+    public func stratHorizontalProgressbar() {
+        print("stratHorizontalProgressbar =>", yPos)
+        self.horizontalProgressBar = HorizontalProgressbar(frame: CGRect(x: 0,
+                                                              y: yPos,
+                                                              width: self.frame.size.width,
+                                                              height: heightForLinearBar))
+        self.addSubview(horizontalProgressBar)
+        horizontalProgressBar.noOfChunks = 1
+        horizontalProgressBar.progressTintColor = progressBarColor
+        horizontalProgressBar.trackTintColor = backgroundProgressBarColor
+        horizontalProgressBar.loadingStyle = .fill
+        horizontalProgressBar.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+         //self.horizontalProgressBar.stopAnimating()
+        }
     }
     public func hidePrgressBar() {
-        progressBar.isHidden = true
-    }
-    @objc func update () {
-        self.progressBar.linearLoadingWith(progress: CGFloat(counter))
-        counter += 1
-        if counter > 100 {
-            timer?.invalidate()
-            self.progressBar.isHidden = true
-        }
+        self.horizontalProgressBar.stopAnimating()
+        linearBar.stopAnimation()
     }
 }
 
