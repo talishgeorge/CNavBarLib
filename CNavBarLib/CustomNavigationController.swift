@@ -82,9 +82,10 @@ public class CustomNavigationController: UIView {
         setBGColorWithAlpha(alpha: 1.0)
         self.leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
         self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
+        self.titleLabel.text = NavBarConstants.titleText
     }
     public func setTransparency(alpha: Float) {
-        self.backgroundColor =  NavBarConstants.transparentBGColor
+        self.backgroundColor =  UIColor.black.withAlphaComponent(CGFloat(alpha))//NavBarConstants.transparentBGColor
         self.outerContentView.backgroundColor = UIColor.clear
         self.innerContentView.backgroundColor = UIColor.clear
         self.leftButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
@@ -110,7 +111,6 @@ public class CustomNavigationController: UIView {
         linearBar.startAnimating()
     }
     public func stratHorizontalProgressbar() {
-        print("stratHorizontalProgressbar =>", yPos)
         self.horizontalProgressBar = HorizontalProgressbar(frame: CGRect(x: 0,
                                                               y: yPos,
                                                               width: self.frame.size.width,

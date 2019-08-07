@@ -25,6 +25,7 @@ public struct NavBarConstants {
     /// at the midst of navigation bar.
     public static var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 16)
     public static var nibName = "CNavBar"
+    public static var titleText: String = "Home"
     public static var osXOffSet: CGFloat = 88
     public static var yOffSet: CGFloat = 64
 }
