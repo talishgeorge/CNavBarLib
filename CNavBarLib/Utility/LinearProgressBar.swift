@@ -18,7 +18,7 @@ class LinearProgressBar: UIView {
                                                          size: CGSize(width: 0, height: heightForLinearBar)))
     }
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+         super.init(coder: aDecoder)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -61,7 +61,7 @@ class LinearProgressBar: UIView {
         if self.superview != nil {
             return
         }
-        // Find current top viewcontroller
+        /// Find current top viewcontroller
         if let topController = getTopViewController() {
             let superView: UIView = topController.view
             superView.addSubview(self)
@@ -95,7 +95,6 @@ class LinearProgressBar: UIView {
             }
         })
     }
-
     fileprivate func getTopViewController() -> UIViewController? {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while topController?.presentedViewController != nil {

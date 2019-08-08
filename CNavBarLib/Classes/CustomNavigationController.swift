@@ -1,20 +1,20 @@
-//
-//  CNavBar.swift
-//  CustomNavBar
-//
-//  Created by Talish George on 26/07/19.
-//  Copyright © 2019 Talish George. All rights reserved.
-//
+///  CustomNavigationController.swift
+///  Created by Talish George on 08/08/19.
+///  Copyright © 2019 Talish George. All rights reserved.
 
 import Foundation
 import UIKit
-
+///  Fully customizable Navigation controller typically displayed at the top of the screen
 public class CustomNavigationController: UIView {
+    ///Left nav bar button action
     public var onLeftButtonAction: ((_ success: Bool) -> Void)?
+    ///Right nav bar button action
     public var onRightButtonAction: ((_ success: Bool) -> Void)?
+    ///Linear activity indicator with material design
     var linearBar: LinearProgressBar = LinearProgressBar()
+    ///Horizon progress bar
     var horizontalProgressBar: HorizontalProgressbar = HorizontalProgressbar()
-    public var yPos: CGFloat = 0
+    ///IBOutlets for nav bar
     @IBOutlet weak var rightNavBarButtonImage: UIImageView!
     @IBOutlet weak var leftNavButtonImage: UIImageView!
     @IBOutlet var outerContentView: UIView!
@@ -60,14 +60,14 @@ public class CustomNavigationController: UIView {
     /// - Parameter UILayoutGuide
     /// - Returns:
     public func setupSafeAreaGuide(guide: UILayoutGuide) {
-        yPos = AppConstants.osXOffSet
+        AppConstants.yPos = AppConstants.osXOffSet
         if #available(iOS 11, *) {
             //self.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
             self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
             if hasTopNotch == false {
-               self.heightAnchor.constraint(equalToConstant: AppConstants.yOffSet).isActive = true
-                 yPos = AppConstants.yOffSet
+                self.heightAnchor.constraint(equalToConstant: AppConstants.defaultOffSet).isActive = true
+                AppConstants.yPos = AppConstants.defaultOffSet
             }
         } else {
             let standardSpacing: CGFloat = 0.0
@@ -111,7 +111,7 @@ public class CustomNavigationController: UIView {
     /// - Parameter
     /// - Returns:
     public func configureNavBar() {
-        setBGColorWithAlpha(alpha: 1.0)
+        setBGColorWithAlpha(alpha: Float(AppConstants.alpha))
         self.leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
         self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
         self.titleLabel.text = NavBarConstants.titleText
@@ -145,7 +145,7 @@ public class CustomNavigationController: UIView {
     /// - Returns:
     public func setBGColorWithAlpha(alpha: Float) {
         self.backgroundColor = NavBarConstants.barBGColor
-        self.alpha = 1.0
+        self.alpha = AppConstants.alpha
         self.outerContentView.backgroundColor = NavBarConstants.barBGColor
         self.innerContentView.backgroundColor = NavBarConstants.barBGColor
         self.leftButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
@@ -159,7 +159,7 @@ public class CustomNavigationController: UIView {
         linearBar.heightForLinearBar = NavBarConstants.heightForLinearBar
         linearBar.backgroundProgressBarColor = NavBarConstants.backgroundProgressBarColor
         linearBar.progressBarColor = NavBarConstants.progressBarColor
-        linearBar.yPos = yPos
+        linearBar.yPos = AppConstants.yPos
         linearBar.startAnimating()
     }
     ///Start horizontal progress bar
@@ -167,9 +167,9 @@ public class CustomNavigationController: UIView {
     /// - Returns:
     public func stratHorizontalProgressbar() {
         self.horizontalProgressBar = HorizontalProgressbar(frame: CGRect(x: 0,
-                                                              y: yPos,
-                                                              width: self.frame.size.width,
-                                                              height: NavBarConstants.heightForLinearBar))
+                                                                         y: AppConstants.yPos,
+                                                                         width: self.frame.size.width,
+                                                                         height: NavBarConstants.heightForLinearBar))
         self.addSubview(horizontalProgressBar)
         horizontalProgressBar.noOfChunks = 1
         horizontalProgressBar.progressTintColor = NavBarConstants.progressBarColor
@@ -177,7 +177,7 @@ public class CustomNavigationController: UIView {
         horizontalProgressBar.loadingStyle = .fill
         horizontalProgressBar.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
-         //self.horizontalProgressBar.stopAnimating()
+            //self.horizontalProgressBar.stopAnimating()
         }
     }
     ///Hide progress progress bar

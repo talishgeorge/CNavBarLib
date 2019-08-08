@@ -1,9 +1,10 @@
 version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
 options: "b15f298163e329a4007f199f9bf623d3"
-build_time: [1565193015, 908499000]
+build_time: [1565237386, 261742000]
 inputs:
-  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants.swift": [9223372036, 854775807]
-  "/Users/talishgeorge/CNavBarLib/CNavBarLib/CustomNavigationController.swift": [9223372036, 854775807]
-  "/Users/talishgeorge/CNavBarLib/CNavBarLib/UIColor+HexColor.swift": [9223372036, 854775807]
-  "/Users/talishgeorge/CNavBarLib/CNavBarLib/HorizonatalProgressbar.swift": [9223372036, 854775807]
-  "/Users/talishgeorge/CNavBarLib/CNavBarLib/LinearProgressBar.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/AppConstants.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Extensions/UIColor+HexColor.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift": [9223372036, 854775807]
+  "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift": [9223372036, 854775807]

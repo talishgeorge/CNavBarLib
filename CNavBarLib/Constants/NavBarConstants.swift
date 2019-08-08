@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+/// Customizable Properties for the Nav Bar.
 public struct NavBarConstants {
     /// Specify this property to determine the navigation bar background color.
     public static var barBGColor: UIColor = UIColor.init(hexString: "#0074b1", alpha: 1.0)
@@ -35,8 +35,12 @@ public struct NavBarConstants {
     public static var leftTitleText: String = ""
     /// Specify this property to set the nav bar right title
     public static var rightTitleText: String = ""
+    /// Specify this property to set the progressbar BG color
     public static var backgroundProgressBarColor: UIColor = UIColor.lightGray
+    /// Specify this property to set the progressbar bar color
     public static var progressBarColor: UIColor = UIColor.white
+    /// Specify this property to set the progressbar height
     public static var heightForLinearBar: CGFloat = 5
+    /// Specify this property to set the progressbar width
     public static var widthForLinearBar: CGFloat = 0
 }

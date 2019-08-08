@@ -24,8 +24,8 @@
 		1F376309163E69C820E59336 /* Pods-CNavBarLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNavBarLib.debug.xcconfig"; path = "Target Support Files/Pods-CNavBarLib/Pods-CNavBarLib.debug.xcconfig"; sourceTree = "<group>"; };
 		66F85D3F331CB7AC8738ECBD /* Pods-CNavBarLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNavBarLib.release.xcconfig"; path = "Target Support Files/Pods-CNavBarLib/Pods-CNavBarLib.release.xcconfig"; sourceTree = "<group>"; };
 		831B164C22F965E000E11577 /* HorizonatalProgressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizonatalProgressbar.swift; sourceTree = "<group>"; };
-		831B165522FBC55600E11577 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = ../AppConstants.swift; sourceTree = "<group>"; };
-		831B165722FBC5FF00E11577 /* NavBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavBarConstants.swift; path = ../NavBarConstants.swift; sourceTree = "<group>"; };
+		831B165522FBC55600E11577 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		831B165722FBC5FF00E11577 /* NavBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarConstants.swift; sourceTree = "<group>"; };
 		83F0E5AA22EBFE1E00525600 /* CNavBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNavBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNavBarLib.h; sourceTree = "<group>"; };
 		83F0E5AE22EBFE1E00525600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,17 +59,59 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		831B165B22FBC96000E11577 /* New Group */ = {
+		831B165B22FBC96000E11577 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83F0E5B522EBFF7E00525600 /* Assets.xcassets */,
 			);
-			path = "New Group";
+			path = Images;
+			sourceTree = "<group>";
+		};
+		831B165C22FBCA2000E11577 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */,
+				831B164C22F965E000E11577 /* HorizonatalProgressbar.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		831B165D22FBCA3500E11577 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83F0E5B722EBFF7E00525600 /* UIColor+HexColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		831B165E22FBCA4700E11577 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83F0E5B622EBFF7E00525600 /* CNavBar.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		831B165F22FBCA7500E11577 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				831B165722FBC5FF00E11577 /* NavBarConstants.swift */,
+				831B165522FBC55600E11577 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		831B166022FBCA8E00E11577 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				83F0E5B922EBFF7E00525600 /* CustomNavigationController.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		83F0E5A022EBFE1E00525600 = {
 			isa = PBXGroup;
 			children = (
-				831B165B22FBC96000E11577 /* New Group */,
 				83F0E5AC22EBFE1E00525600 /* CNavBarLib */,
 				83F0E5AB22EBFE1E00525600 /* Products */,
 				16A10A68A2597E3FEADBE5A7 /* Pods */,
@@ -88,17 +130,15 @@
 		83F0E5AC22EBFE1E00525600 /* CNavBarLib */ = {
 			isa = PBXGroup;
 			children = (
+				831B166022FBCA8E00E11577 /* Classes */,
+				831B165E22FBCA4700E11577 /* Views */,
+				831B165D22FBCA3500E11577 /* Extensions */,
+				831B165C22FBCA2000E11577 /* Utility */,
+				831B165B22FBC96000E11577 /* Images */,
+				831B165F22FBCA7500E11577 /* Constants */,
 				83F0E5BF22EC0A5000525600 /* LICENSE */,
-				83F0E5B522EBFF7E00525600 /* Assets.xcassets */,
-				83F0E5B922EBFF7E00525600 /* CustomNavigationController.swift */,
-				83F0E5B622EBFF7E00525600 /* CNavBar.xib */,
-				83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */,
-				831B164C22F965E000E11577 /* HorizonatalProgressbar.swift */,
-				83F0E5B722EBFF7E00525600 /* UIColor+HexColor.swift */,
 				83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */,
 				83F0E5AE22EBFE1E00525600 /* Info.plist */,
-				831B165722FBC5FF00E11577 /* NavBarConstants.swift */,
-				831B165522FBC55600E11577 /* AppConstants.swift */,
 			);
 			path = CNavBarLib;
 			sourceTree = "<group>";

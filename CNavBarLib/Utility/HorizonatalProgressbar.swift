@@ -1,14 +1,20 @@
 import UIKit
 
-public class HorizontalProgressbar: UIView {
-    internal var arrProgressChunks = [UIView]() //To generate dymanic Chunks under progressbar
-    public var progressTintColor: UIColor!   //Progressbar Tint color
-    public var trackTintColor: UIColor!      //Progressbar track color
+class HorizontalProgressbar: UIView {
+    /// To generate dymanic Chunks under progressbar
+    internal var arrProgressChunks = [UIView]()
+    /// Progressbar Tint color
+    public var progressTintColor: UIColor!
+    /// Progressbar track color
+    public var trackTintColor: UIColor!
     var hideWhenStopped: Bool!
     var isAnimating: Bool!
-    public var kChunkWdith = 50.0            //Progressbar Chunk width
-    public var noOfChunks = 3                //Number of Chunks to animate
-    public var loadingStyle: ProgressType?        //Type of progress bar (Determine or Indetermine)
+    /// Progressbar Chunk width
+    public var kChunkWdith = 50.0
+    /// Number of Chunks to animate
+    public var noOfChunks = 3
+    /// Type of progress bar (Determine or Indetermine)
+    public var loadingStyle: ProgressType?
     public var yPos: CGFloat = 0
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,24 +30,60 @@ public class HorizontalProgressbar: UIView {
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
     }
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    // Set tint color for track animation
+    /// Set tint color for track animation
     func trackTintColor (tintColor: UIColor) {
         trackTintColor = tintColor
     }
-    // Set background color for track
+    /// Set background color for track
     func progressTintColor (tintColor: UIColor) {
         progressTintColor = tintColor
     }
-    // To begin animation
+    /// To begin animation
+    fileprivate func configureDetermineMode() {
+        noOfChunks = 1
+        let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
+                                              y: Double(0.0), width: Double(kChunkWdith),
+                                              height: Double(self.frame.size.height)))
+        arrProgressChunks.append(chunk)
+        var delay: TimeInterval = 0.0
+        for chunk in arrProgressChunks {
+            chunk.backgroundColor = self.progressTintColor
+            self.addSubview(chunk)
+            delay +=  0.25
+            self.doChunkAnimation(chunk: chunk, delay: (delay))
+        }
+    }
+    fileprivate func configureFillMode() {
+        self.backgroundColor = trackTintColor
+        noOfChunks = 1
+        let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
+                                              y: Double(0.0), width: Double(kChunkWdith),
+                                              height: Double(self.frame.size.height)))
+        arrProgressChunks.append(chunk)
+        var delay: TimeInterval = 0.0
+        for chunk in arrProgressChunks {
+            chunk.backgroundColor = self.progressTintColor
+            self.addSubview(chunk)
+            delay += 0.25
+            self.doChunkAnimation(chunk: chunk, delay: (delay))
+        }
+    }
+    fileprivate func configureIndetermineMode() {
+        for _ in 0..<noOfChunks {
+            let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
+                                                  y: Double(0.0), width: Double(kChunkWdith),
+                                                  height: Double(self.frame.size.height)))
+            arrProgressChunks.append(chunk)
+        }
+        var delay: TimeInterval = 0.0
+        for chunk in arrProgressChunks {
+            chunk.backgroundColor = self.progressTintColor
+            self.addSubview(chunk)
+            delay += 0.25
+            self.doChunkAnimation(chunk: chunk, delay: (delay))
+        }
+    }
     public func startAnimating() {
         if isAnimating {
             return
@@ -51,52 +93,17 @@ public class HorizontalProgressbar: UIView {
             arrProgressChunks.removeAll()
             switch loadingStyle {
             case .determine?:
-                noOfChunks = 1
-                let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
-                                                      y: Double(0.0), width: Double(kChunkWdith),
-                                                      height: Double(self.frame.size.height)))
-                arrProgressChunks.append(chunk)
-                var delay: TimeInterval = 0.0
-                for chunk in arrProgressChunks {
-                    chunk.backgroundColor = self.progressTintColor
-                    self.addSubview(chunk)
-                    delay +=  0.25
-                    self.doChunkAnimation(chunk: chunk, delay: (delay))
-                }
+                configureDetermineMode()
             case .fill?:
-                self.backgroundColor = trackTintColor
-                noOfChunks = 1
-                let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
-                                                      y: Double(0.0), width: Double(kChunkWdith),
-                                                      height: Double(self.frame.size.height)))
-                arrProgressChunks.append(chunk)
-                var delay: TimeInterval = 0.0
-                for chunk in arrProgressChunks {
-                    chunk.backgroundColor = self.progressTintColor
-                    self.addSubview(chunk)
-                    delay += 0.25
-                    self.doChunkAnimation(chunk: chunk, delay: (delay))
-                }
+                configureFillMode()
             case .indetermine? :
-                for _ in 0..<noOfChunks {
-                    let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
-                                                          y: Double(0.0), width: Double(kChunkWdith),
-                                                          height: Double(self.frame.size.height)))
-                    arrProgressChunks.append(chunk)
-                }
-                var delay: TimeInterval = 0.0
-                for chunk in arrProgressChunks {
-                    chunk.backgroundColor = self.progressTintColor
-                    self.addSubview(chunk)
-                    delay += 0.25
-                    self.doChunkAnimation(chunk: chunk, delay: (delay))
-                }
+                configureIndetermineMode()
             case .none:
                 break
             }
         }
     }
-    // To stop animation
+    /// To stop animation
     public func stopAnimating() {
         if !isAnimating {
             return
@@ -108,7 +115,7 @@ public class HorizontalProgressbar: UIView {
             self.arrProgressChunks.removeAll()
         }
     }
-    // Chunk animation logic
+    /// Chunk animation logic
     func doChunkAnimation (chunk: UIView, delay: TimeInterval) {
         switch loadingStyle {
         case .determine?:
