@@ -1,0 +1,11 @@
+framework module CNavBarLib {
+  umbrella header "CNavBarLib.h"
+
+  export *
+  module * { export * }
+}
+
+module CNavBarLib.Swift {
+    header "CNavBarLib-Swift.h"
+    requires objc
+}

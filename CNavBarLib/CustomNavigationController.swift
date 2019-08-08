@@ -10,18 +10,10 @@ import Foundation
 import UIKit
 
 public class CustomNavigationController: UIView {
-
-    var view: CustomNavigationController!
-    var nibName: String = NavBarConstants.nibName
     public var onLeftButtonAction: ((_ success: Bool) -> Void)?
     public var onRightButtonAction: ((_ success: Bool) -> Void)?
-    var timer: Timer?
     var linearBar: LinearProgressBar = LinearProgressBar()
     var horizontalProgressBar: HorizontalProgressbar = HorizontalProgressbar()
-    public var backgroundProgressBarColor: UIColor = UIColor.lightGray
-    public var progressBarColor: UIColor = UIColor.white
-    public var heightForLinearBar: CGFloat = 5
-    public var widthForLinearBar: CGFloat = 0
     public var yPos: CGFloat = 0
     @IBOutlet weak var rightNavBarButtonImage: UIImageView!
     @IBOutlet weak var leftNavButtonImage: UIImageView!
@@ -30,27 +22,52 @@ public class CustomNavigationController: UIView {
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
-    //This constructor/initializer will be called when we are creating view programmatically with init(frame: CGRect)
+    @IBOutlet weak var leftTitleLabel: UILabel!
+    @IBOutlet weak var rightTitleLabel: UILabel!
+    ///Protperty Observer for left nav button visibility
+    /// - Parameter
+    /// - Returns
+    public var isLeftTitleHidden: Bool {
+        didSet {
+            self.leftTitleLabel.isHidden = isLeftTitleHidden
+        }
+    }
+    ///Protperty Observer for right nav button visibility
+    /// - Parameter
+    /// - Returns
+    public var isRightTitleHidden: Bool {
+        didSet {
+            self.rightTitleLabel.isHidden = isRightTitleHidden
+        }
+    }
+    ///This constructor/initializer will be called when we are creating view programmatically with init(frame: CGRect)
+    /// - Parameter NSCoder
+    /// - Returns
     public override init(frame: CGRect) {
+        self.isLeftTitleHidden = false
+        self.isRightTitleHidden = false
         super.init(frame: frame)
     }
+    ///This constructore is called when the view is unarchived from a nib.
+    /// - Parameter NSCoder
+    /// - Returns:
     public required init?(coder aDecoder: NSCoder) {
+        self.isLeftTitleHidden = false
+        self.isRightTitleHidden = false
         super.init(coder: aDecoder)
     }
-
-    public func setupView() {
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-
+    /// Configure safearea layout constraints for the custom view
+    /// - Parameter UILayoutGuide
+    /// - Returns:
     public func setupSafeAreaGuide(guide: UILayoutGuide) {
-        yPos = NavBarConstants.osXOffSet
+        yPos = AppConstants.osXOffSet
         if #available(iOS 11, *) {
             //self.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
             self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
             if hasTopNotch == false {
-               self.heightAnchor.constraint(equalToConstant: NavBarConstants.yOffSet).isActive = true
-                 yPos = NavBarConstants.yOffSet
+               self.heightAnchor.constraint(equalToConstant: AppConstants.yOffSet).isActive = true
+                 yPos = AppConstants.yOffSet
             }
         } else {
             let standardSpacing: CGFloat = 0.0
@@ -60,39 +77,72 @@ public class CustomNavigationController: UIView {
                 ])
         }
     }
+    /// Protperty return true, if the device is >= iPhone X
+    /// - Parameter
+    /// - Returns:bool value
     var hasTopNotch: Bool {
         if #available(iOS 11.0, *) {
             return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
         }
         return false
     }
+    /// Load Navigation Bar
+    /// - Parameter sender
+    /// - Returns:Custom NavigationController
     public static func loadNavBar() -> CustomNavigationController {
         let bundle =  Bundle(for: CustomNavigationController.self)
-        let nib = UINib(nibName: NavBarConstants.nibName, bundle: bundle)
+        let nib = UINib(nibName: AppConstants.nibName, bundle: bundle)
         let custView = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationController)!
         return custView
     }
+    /// Invoked when user tapped right nav button
+    /// - Parameter sender
+    /// - Returns:
     @IBAction func userTappedRightButton(_ sender: Any) {
         onRightButtonAction?(true)
     }
+    /// Invoked when user tapped left nav button
+    /// - Parameter sender
+    /// - Returns:
     @IBAction func userTappedLeftButton(_ sender: Any) {
         onLeftButtonAction?(true)
     }
+    /// Configure Navigation Bar
+    /// - Parameter
+    /// - Returns:
     public func configureNavBar() {
         setBGColorWithAlpha(alpha: 1.0)
         self.leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
         self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
         self.titleLabel.text = NavBarConstants.titleText
+        self.leftTitleLabel.text = NavBarConstants.leftTitleText
+        self.rightTitleLabel.text = NavBarConstants.rightTitleText
     }
+    ///Set Transparency for the nav bar
+    /// - Parameter alpha value
+    /// - Returns:
     public func setTransparency(alpha: Float) {
         self.backgroundColor =  UIColor.black.withAlphaComponent(CGFloat(alpha))//NavBarConstants.transparentBGColor
         self.outerContentView.backgroundColor = UIColor.clear
         self.innerContentView.backgroundColor = UIColor.clear
         self.leftButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
         self.rightButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
-        self.titleLabel?.textColor = NavBarConstants.transparentTitleColor
-        self.titleLabel.font = NavBarConstants.titleFont
+        setNavBarTitle()
     }
+    ///Configure Nav bar title
+    /// - Parameter
+    /// - Returns:
+    private func setNavBarTitle() {
+        self.titleLabel.textColor = NavBarConstants.titleColor
+        self.titleLabel.font = NavBarConstants.titleFont
+        self.leftTitleLabel.textColor = NavBarConstants.titleColor
+        self.leftTitleLabel.font = NavBarConstants.leftRightTitleFont
+        self.rightTitleLabel.textColor = NavBarConstants.titleColor
+        self.rightTitleLabel.font = NavBarConstants.leftRightTitleFont
+    }
+    ///Configure set bachground color for the nav bar
+    /// - Parameter alpha value
+    /// - Returns:
     public func setBGColorWithAlpha(alpha: Float) {
         self.backgroundColor = NavBarConstants.barBGColor
         self.alpha = 1.0
@@ -100,31 +150,39 @@ public class CustomNavigationController: UIView {
         self.innerContentView.backgroundColor = NavBarConstants.barBGColor
         self.leftButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         self.rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
-        self.titleLabel.textColor = NavBarConstants.titleColor
-        self.titleLabel.font = NavBarConstants.titleFont
+        setNavBarTitle()
     }
+    ///Start linear progress bar with material rendering
+    /// - Parameter
+    /// - Returns:
     public func startLinearProgress() {
-        linearBar.heightForLinearBar = heightForLinearBar
-        linearBar.backgroundProgressBarColor = backgroundProgressBarColor
-        linearBar.progressBarColor = progressBarColor
+        linearBar.heightForLinearBar = NavBarConstants.heightForLinearBar
+        linearBar.backgroundProgressBarColor = NavBarConstants.backgroundProgressBarColor
+        linearBar.progressBarColor = NavBarConstants.progressBarColor
         linearBar.yPos = yPos
         linearBar.startAnimating()
     }
+    ///Start horizontal progress bar
+    /// - Parameter
+    /// - Returns:
     public func stratHorizontalProgressbar() {
         self.horizontalProgressBar = HorizontalProgressbar(frame: CGRect(x: 0,
                                                               y: yPos,
                                                               width: self.frame.size.width,
-                                                              height: heightForLinearBar))
+                                                              height: NavBarConstants.heightForLinearBar))
         self.addSubview(horizontalProgressBar)
         horizontalProgressBar.noOfChunks = 1
-        horizontalProgressBar.progressTintColor = progressBarColor
-        horizontalProgressBar.trackTintColor = backgroundProgressBarColor
+        horizontalProgressBar.progressTintColor = NavBarConstants.progressBarColor
+        horizontalProgressBar.trackTintColor = NavBarConstants.backgroundProgressBarColor
         horizontalProgressBar.loadingStyle = .fill
         horizontalProgressBar.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
          //self.horizontalProgressBar.stopAnimating()
         }
     }
+    ///Hide progress progress bar
+    /// - Parameter
+    /// - Returns:
     public func hidePrgressBar() {
         self.horizontalProgressBar.stopAnimating()
         linearBar.stopAnimation()

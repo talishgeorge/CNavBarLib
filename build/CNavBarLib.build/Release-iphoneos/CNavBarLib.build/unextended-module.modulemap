@@ -1,0 +1,10 @@
+framework module CNavBarLib {
+  umbrella header "CNavBarLib.h"
+
+  export *
+  module * { export * }
+}
+
+module CNavBarLib.__Swift {
+    exclude header "CNavBarLib-Swift.h"
+}

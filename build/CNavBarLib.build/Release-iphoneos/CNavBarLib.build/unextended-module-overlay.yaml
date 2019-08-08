@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/talishgeorge/CNavBarLib/build/Release-iphoneos/CNavBarLib.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/talishgeorge/CNavBarLib/build/CNavBarLib.build/Release-iphoneos/CNavBarLib.build/unextended-module.modulemap",
+    }]
+  }]
+}
