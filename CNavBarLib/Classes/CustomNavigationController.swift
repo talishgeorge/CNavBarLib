@@ -15,7 +15,7 @@ public class CustomNavigationController: UIView {
     ///Horizon progress bar
     private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
     // MARK: - IBOutlets
-    ///IBOutlets for nav bar
+    ///IBOutlets for Nav Bar
     @IBOutlet weak var rightNavBarButtonImage: UIImageView!
     @IBOutlet weak var leftNavButtonImage: UIImageView!
     @IBOutlet var outerContentView: UIView!
