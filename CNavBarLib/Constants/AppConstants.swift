@@ -1,5 +1,5 @@
 public struct AppConstants {
-    public static var nibName = "CNavBar"
+    internal static var nibName = "CustomNavigationBar"
     public static var osXOffSet: CGFloat = 88
     public static var defaultOffSet: CGFloat = 64
     public static var yPos: CGFloat = 0

@@ -1,6 +1,6 @@
 import UIKit
 
-class HorizontalProgressbar: UIView {
+class HorizontalProgressBar: UIView {
     /// To generate dymanic Chunks under progressbar
     internal var arrProgressChunks = [UIView]()
     /// Progressbar Tint color
@@ -85,6 +85,10 @@ class HorizontalProgressbar: UIView {
         }
     }
     public func startAnimating() {
+        self.noOfChunks = 1
+        self.progressTintColor = NavBarConstants.progressBarColor
+        self.trackTintColor = NavBarConstants.backgroundProgressBarColor
+        self.loadingStyle = .fill
         if isAnimating {
             return
         } else {
@@ -163,7 +167,7 @@ class HorizontalProgressbar: UIView {
     }
 }
 
-extension HorizontalProgressbar {
+extension HorizontalProgressBar {
     public enum ProgressType: Int {
         case determine = 11
         case indetermine = 22

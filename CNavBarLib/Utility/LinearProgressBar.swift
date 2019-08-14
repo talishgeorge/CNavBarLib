@@ -7,10 +7,10 @@ class LinearProgressBar: UIView {
     var isAnimationRunning = false
     var intialWidth: CGFloat = 10
     public var yPos: CGFloat = 0
-    public var backgroundProgressBarColor: UIColor = UIColor(red: 0.73, green: 0.87, blue: 0.98, alpha: 1.0)
-    public var progressBarColor: UIColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
-    public var heightForLinearBar: CGFloat = 5
-    public var widthForLinearBar: CGFloat = 0
+    public var backgroundProgressBarColor: UIColor = Color.background
+    public var progressBarColor: UIColor = Color.progressBar
+    public var heightForLinearBar: CGFloat = Size.height
+    public var widthForLinearBar: CGFloat = Size.width
     public init() {
         super.init(frame: CGRect(origin: CGPoint(x: 0, y: 20), size: CGSize(width: screenSize.width,
                                                                             height: 0)))
@@ -28,8 +28,7 @@ class LinearProgressBar: UIView {
         }
         if UIDevice.current.orientation.isLandscape {
             self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos
-                ),
-                                size: CGSize(width: widthForLinearBar, height: self.frame.height))
+                ), size: CGSize(width: widthForLinearBar, height: self.frame.height))
         }
         if UIDevice.current.orientation.isPortrait {
             self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos),
@@ -37,6 +36,10 @@ class LinearProgressBar: UIView {
         }
     }
     open func startAnimating() {
+        self.heightForLinearBar = NavBarConstants.heightForLinearBar
+        self.backgroundProgressBarColor = NavBarConstants.backgroundProgressBarColor
+        self.progressBarColor = NavBarConstants.progressBarColor
+        self.yPos = AppConstants.yPos
         self.configureColors()
         self.show()
         if !isAnimationRunning {
@@ -62,7 +65,7 @@ class LinearProgressBar: UIView {
             return
         }
         /// Find current top viewcontroller
-        if let topController = getTopViewController() {
+        if let topController = UIApplication.shared.keyWindow?.rootViewController?.getTopViewController() {
             let superView: UIView = topController.view
             superView.addSubview(self)
         }
@@ -95,11 +98,14 @@ class LinearProgressBar: UIView {
             }
         })
     }
-    fileprivate func getTopViewController() -> UIViewController? {
-        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
-        while topController?.presentedViewController != nil {
-            topController = topController?.presentedViewController
-        }
-        return topController
+}
+private extension LinearProgressBar {
+    struct Color {
+        static let background: UIColor = UIColor(red: 0.73, green: 0.87, blue: 0.98, alpha: 1.0)
+        static let progressBar: UIColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
+    }
+    struct Size {
+        static let height: CGFloat = 5
+        static let width: CGFloat = 0
     }
 }
