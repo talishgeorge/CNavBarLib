@@ -3,7 +3,6 @@ import UIKit
 
 class LinearProgressBar: UIView {
     fileprivate var progressBarIndicator: UIView!
-    fileprivate var screenSize: CGRect = UIScreen.main.bounds
     var isAnimationRunning = false
     var intialWidth: CGFloat = 10
     public var yPos: CGFloat = 0
@@ -12,7 +11,7 @@ class LinearProgressBar: UIView {
     public var heightForLinearBar: CGFloat = Size.height
     public var widthForLinearBar: CGFloat = Size.width
     public init() {
-        super.init(frame: CGRect(origin: CGPoint(x: 0, y: 20), size: CGSize(width: screenSize.width,
+        super.init(frame: CGRect(origin: CGPoint(x: 0, y: 20), size: CGSize(width: UIScreen.main.bounds.width,
                                                                             height: 0)))
         self.progressBarIndicator = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0),
                                                          size: CGSize(width: 0, height: heightForLinearBar)))
@@ -22,14 +21,19 @@ class LinearProgressBar: UIView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.screenSize = UIScreen.main.bounds
-        if widthForLinearBar == 0 || widthForLinearBar == self.screenSize.height {
-            widthForLinearBar = self.screenSize.width
+        if widthForLinearBar == 0 || widthForLinearBar == UIScreen.main.bounds.height {
+            widthForLinearBar = UIScreen.main.bounds.width
         }
+        setupViewForLandscapeMode()
+        setupViewForPortraitMode()
+    }
+    fileprivate func setupViewForLandscapeMode() {
         if UIDevice.current.orientation.isLandscape {
             self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos
-                ), size: CGSize(width: widthForLinearBar, height: self.frame.height))
+            ), size: CGSize(width: widthForLinearBar, height: self.frame.height))
         }
+    }
+    fileprivate func setupViewForPortraitMode() {
         if UIDevice.current.orientation.isPortrait {
             self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos),
                                 size: CGSize(width: widthForLinearBar, height: self.frame.height))

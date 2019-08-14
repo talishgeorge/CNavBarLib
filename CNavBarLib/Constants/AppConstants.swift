@@ -5,3 +5,9 @@ public struct AppConstants {
     public static var yPos: CGFloat = 0
     public static var alpha: CGFloat = 1.0
 }
+
+public enum ProgressType: Int {
+    case determine = 11
+    case indetermine = 22
+    case fill = 33
+}

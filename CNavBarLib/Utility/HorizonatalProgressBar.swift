@@ -39,23 +39,41 @@ class HorizontalProgressBar: UIView {
     func progressTintColor (tintColor: UIColor) {
         progressTintColor = tintColor
     }
-    /// To begin animation
-    fileprivate func configureDetermineMode() {
-        noOfChunks = 1
-        let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
-                                              y: Double(0.0), width: Double(kChunkWdith),
-                                              height: Double(self.frame.size.height)))
-        arrProgressChunks.append(chunk)
-        var delay: TimeInterval = 0.0
-        for chunk in arrProgressChunks {
-            chunk.backgroundColor = self.progressTintColor
-            self.addSubview(chunk)
-            delay +=  0.25
-            self.doChunkAnimation(chunk: chunk, delay: (delay))
+    public func startAnimating() {
+        self.noOfChunks = 1
+        self.progressTintColor = NavBarConstants.progressBarColor
+        self.trackTintColor = NavBarConstants.backgroundProgressBarColor
+        self.loadingStyle = NavBarConstants.animaitonType
+        if isAnimating {
+            return
+        } else {
+            isAnimating = true
+            self.isHidden = false
+            arrProgressChunks.removeAll()
+            switch loadingStyle {
+            case .determine?:
+                configureDetermineMode()
+            case .fill?:
+                self.backgroundColor = trackTintColor
+                configureFillMode()
+            case .indetermine? :
+                configureIndetermineMode()
+            case .none:
+                break
+            }
         }
     }
-    fileprivate func configureFillMode() {
-        self.backgroundColor = trackTintColor
+    /// To begin animation
+    private func configureDetermineMode() {
+        setupChunckAnimation()
+    }
+    private func configureFillMode() {
+        setupChunckAnimation()
+    }
+    private func configureIndetermineMode() {
+        setupChunckAnimaitionForIndetermine()
+    }
+    private func setupChunckAnimation() {
         noOfChunks = 1
         let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
                                               y: Double(0.0), width: Double(kChunkWdith),
@@ -69,7 +87,7 @@ class HorizontalProgressBar: UIView {
             self.doChunkAnimation(chunk: chunk, delay: (delay))
         }
     }
-    fileprivate func configureIndetermineMode() {
+    private func setupChunckAnimaitionForIndetermine() {
         for _ in 0..<noOfChunks {
             let chunk = UIView.init(frame: CGRect(x: Double(-kChunkWdith),
                                                   y: Double(0.0), width: Double(kChunkWdith),
@@ -82,29 +100,6 @@ class HorizontalProgressBar: UIView {
             self.addSubview(chunk)
             delay += 0.25
             self.doChunkAnimation(chunk: chunk, delay: (delay))
-        }
-    }
-    public func startAnimating() {
-        self.noOfChunks = 1
-        self.progressTintColor = NavBarConstants.progressBarColor
-        self.trackTintColor = NavBarConstants.backgroundProgressBarColor
-        self.loadingStyle = .fill
-        if isAnimating {
-            return
-        } else {
-            isAnimating = true
-            self.isHidden = false
-            arrProgressChunks.removeAll()
-            switch loadingStyle {
-            case .determine?:
-                configureDetermineMode()
-            case .fill?:
-                configureFillMode()
-            case .indetermine? :
-                configureIndetermineMode()
-            case .none:
-                break
-            }
         }
     }
     /// To stop animation
@@ -123,54 +118,55 @@ class HorizontalProgressBar: UIView {
     func doChunkAnimation (chunk: UIView, delay: TimeInterval) {
         switch loadingStyle {
         case .determine?:
-            _ =  [UIView .animate(withDuration: 1.00, delay: delay, options: .autoreverse, animations: {
-                var chunkFrame = chunk.frame
-                chunkFrame.origin.x = self.frame.size.width - CGFloat(self.kChunkWdith)
-                chunk.frame = chunkFrame
-            }, completion: { (finished) in
-                var chunkFrame = chunk.frame
-                chunkFrame.origin.x = CGFloat(-self.kChunkWdith)
-                chunk.frame = chunkFrame
-                if finished {
-                    self.doChunkAnimation(chunk: chunk, delay: 0.4)
-                }
-            })]
+            strartAnimationForDetermineMode(delay, chunk)
         case .fill?:
-            _ =  [UIView .animate(withDuration: 3.00, delay: delay, options: .curveEaseInOut, animations: {
-                var chunkFrame = chunk.frame
-                chunkFrame.size.width = self.frame.size.width + CGFloat(self.kChunkWdith)
-                chunk.frame = chunkFrame
-            }, completion: { (finished) in
-                var chunkFrame = chunk.frame
-                chunkFrame.size.width = CGFloat(self.kChunkWdith)
-                chunk.frame = chunkFrame
-                if finished {
-                    self.doChunkAnimation(chunk: chunk, delay: 0.1)
-                }
-            })]
+            startAnimationForFillMode(delay, chunk)
         case .indetermine?:
-            _ =  [UIView .animate(withDuration: 1.00, delay: delay, options: .curveEaseInOut, animations: {
-                var chunkFrame = chunk.frame
-                chunkFrame.origin.x = self.frame.size.width
-                chunk.frame = chunkFrame
-            }, completion: { (finished) in
-                var chunkFrame = chunk.frame
-                chunkFrame.origin.x = CGFloat(-self.kChunkWdith)
-                chunk.frame = chunkFrame
-                if finished {
-                    self.doChunkAnimation(chunk: chunk, delay: 0.4)
-                }
-            })]
+            startAnimaitonForIndetermineMode(delay, chunk)
         default:
             break
         }
     }
-}
-
-extension HorizontalProgressBar {
-    public enum ProgressType: Int {
-        case determine = 11
-        case indetermine = 22
-        case fill = 33
+    private func strartAnimationForDetermineMode(_ delay: TimeInterval, _ chunk: UIView) {
+        _ =  [UIView .animate(withDuration: 1.00, delay: delay, options: .autoreverse, animations: {
+            var chunkFrame = chunk.frame
+            chunkFrame.origin.x = self.frame.size.width - CGFloat(self.kChunkWdith)
+            chunk.frame = chunkFrame
+        }, completion: { (finished) in
+            var chunkFrame = chunk.frame
+            chunkFrame.origin.x = CGFloat(-self.kChunkWdith)
+            chunk.frame = chunkFrame
+            if finished {
+                self.doChunkAnimation(chunk: chunk, delay: 0.4)
+            }
+        })]
+    }
+    private func startAnimationForFillMode(_ delay: TimeInterval, _ chunk: UIView) {
+        _ =  [UIView .animate(withDuration: 3.00, delay: delay, options: .curveEaseInOut, animations: {
+            var chunkFrame = chunk.frame
+            chunkFrame.size.width = self.frame.size.width + CGFloat(self.kChunkWdith)
+            chunk.frame = chunkFrame
+        }, completion: { (finished) in
+            var chunkFrame = chunk.frame
+            chunkFrame.size.width = CGFloat(self.kChunkWdith)
+            chunk.frame = chunkFrame
+            if finished {
+                self.doChunkAnimation(chunk: chunk, delay: 0.1)
+            }
+        })]
+    }
+    private func startAnimaitonForIndetermineMode(_ delay: TimeInterval, _ chunk: UIView) {
+        _ =  [UIView .animate(withDuration: 1.00, delay: delay, options: .curveEaseInOut, animations: {
+            var chunkFrame = chunk.frame
+            chunkFrame.origin.x = self.frame.size.width
+            chunk.frame = chunkFrame
+        }, completion: { (finished) in
+            var chunkFrame = chunk.frame
+            chunkFrame.origin.x = CGFloat(-self.kChunkWdith)
+            chunk.frame = chunkFrame
+            if finished {
+                self.doChunkAnimation(chunk: chunk, delay: 0.4)
+            }
+        })]
     }
 }

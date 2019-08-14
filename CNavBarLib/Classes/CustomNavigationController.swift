@@ -102,7 +102,6 @@ public extension CustomNavigationController {
     func setupSafeAreaGuide(guide: UILayoutGuide) {
         AppConstants.yPos = AppConstants.osXOffSet
         if #available(iOS 11, *) {
-            //self.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
             self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
             if UIApplication.shared.keyWindow?.hasTopNotch == false {
@@ -110,10 +109,10 @@ public extension CustomNavigationController {
                 AppConstants.yPos = AppConstants.defaultOffSet
             }
         } else {
-            let standardSpacing: CGFloat = 0.0
+            let margins = self.layoutMarginsGuide
             NSLayoutConstraint.activate([
-                self.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: standardSpacing),
-                safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.bottomAnchor, constant: standardSpacing)
+                self.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+                self.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
                 ])
         }
     }

@@ -43,4 +43,6 @@ public struct NavBarConstants {
     public static var heightForLinearBar: CGFloat = 5
     /// Specify this property to set the progressbar width
     public static var widthForLinearBar: CGFloat = 0
+    ///Progressbar Animation mode
+    public static var animaitonType: ProgressType = .fill
 }
