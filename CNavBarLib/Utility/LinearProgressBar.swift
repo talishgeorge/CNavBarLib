@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class LinearProgressBar: UIView {
-     // MARK: - Private Stored Properties
+    // MARK: - Private Stored Properties
     private var progressBarIndicator: UIView!
     var isAnimationRunning = false
     var intialWidth: CGFloat = 10
@@ -23,7 +23,7 @@ class LinearProgressBar: UIView {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        if widthForLinearBar == 0 || widthForLinearBar == UIScreen.main.bounds.height {
+        if widthForLinearBar == 0 {
             widthForLinearBar = UIScreen.main.bounds.width
         }
         setupViewForLandscapeMode()

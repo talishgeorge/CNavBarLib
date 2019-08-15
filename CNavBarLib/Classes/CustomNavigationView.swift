@@ -59,12 +59,6 @@ public class CustomNavigationView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    public func initializeMemberVariables() {
-        self.isLeftTitleHidden = false
-        self.isRightTitleHidden = false
-        self.onLeftButtonAction = nil
-        self.onRightButtonAction = nil
-    }
 }
 // MARK: - Private Methods
 private extension CustomNavigationView {
@@ -72,12 +66,12 @@ private extension CustomNavigationView {
     /// - Parameter
     /// - Returns:
     private func setNavigationBarTitle() {
-        self.titleLabel.textColor = NavBarConstants.titleColor
-        self.titleLabel.font = NavBarConstants.titleFont
-        self.leftTitleLabel.textColor = NavBarConstants.titleColor
-        self.leftTitleLabel.font = NavBarConstants.leftRightTitleFont
-        self.rightTitleLabel.textColor = NavBarConstants.titleColor
-        self.rightTitleLabel.font = NavBarConstants.leftRightTitleFont
+        titleLabel.textColor = NavBarConstants.titleColor
+        titleLabel.font = NavBarConstants.titleFont
+        leftTitleLabel.textColor = NavBarConstants.titleColor
+        leftTitleLabel.font = NavBarConstants.leftRightTitleFont
+        rightTitleLabel.textColor = NavBarConstants.titleColor
+        rightTitleLabel.font = NavBarConstants.leftRightTitleFont
     }
     /// Invoked when user tapped right nav button
     /// - Parameter sender
@@ -99,19 +93,11 @@ public extension CustomNavigationView {
     /// - Returns:
     func setupSafeArea(guide: UILayoutGuide) {
         AppConstants.yPos = AppConstants.osXOffSet
-        if #available(iOS 11, *) {
-            self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-            self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-            if UIApplication.shared.keyWindow?.hasTopNotch == false {
-                self.heightAnchor.constraint(equalToConstant: AppConstants.defaultOffSet).isActive = true
-                AppConstants.yPos = AppConstants.defaultOffSet
-            }
-        } else {
-            let margins = self.layoutMarginsGuide
-            NSLayoutConstraint.activate([
-                self.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-                self.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
-                ])
+        self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+        if UIApplication.shared.keyWindow?.hasTopNotch == false {
+            self.heightAnchor.constraint(equalToConstant: AppConstants.defaultOffSet).isActive = true
+            AppConstants.yPos = AppConstants.defaultOffSet
         }
     }
     /// Load Navigation Bar
@@ -120,26 +106,26 @@ public extension CustomNavigationView {
     static func loadNavigationBar() -> CustomNavigationView {
         let bundle =  Bundle(for: CustomNavigationView.self)
         let nib = UINib(nibName: AppConstants.nibName, bundle: bundle)
-        let custView = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
-        return custView
+        let customNavigationBar = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
+        return customNavigationBar
     }
     func configureNavigationBar() {
         setBackgroundColorWithAlpha(alpha: Float(AppConstants.alpha))
-        self.leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
-        self.rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
-        self.titleLabel.text = NavBarConstants.titleText
-        self.leftTitleLabel.text = NavBarConstants.leftTitleText
-        self.rightTitleLabel.text = NavBarConstants.rightTitleText
+        leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
+        rightNavBarButtonImage.image = NavBarConstants.rightNavButtonImage
+        titleLabel.text = NavBarConstants.titleText
+        leftTitleLabel.text = NavBarConstants.leftTitleText
+        rightTitleLabel.text = NavBarConstants.rightTitleText
     }
     ///Set Transparency for the nav bar
     /// - Parameter alpha value
     /// - Returns:
     func setTransparency(alpha: Float) {
-        self.backgroundColor =  UIColor.black.withAlphaComponent(CGFloat(alpha))//NavBarConstants.transparentBGColor
-        self.outerContentView.backgroundColor = UIColor.clear
-        self.innerContentView.backgroundColor = UIColor.clear
-        self.leftButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
-        self.rightButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
+        self.backgroundColor =  UIColor.black.withAlphaComponent(CGFloat(alpha))
+        outerContentView.backgroundColor = .clear
+        innerContentView.backgroundColor = .clear
+        leftButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
+        rightButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
         setNavigationBarTitle()
     }
     ///Configure set bachground color for the nav bar
@@ -148,10 +134,10 @@ public extension CustomNavigationView {
     func setBackgroundColorWithAlpha(alpha: Float) {
         self.backgroundColor = NavBarConstants.barBGColor
         self.alpha = AppConstants.alpha
-        self.outerContentView.backgroundColor = NavBarConstants.barBGColor
-        self.innerContentView.backgroundColor = NavBarConstants.barBGColor
-        self.leftButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
-        self.rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
+        outerContentView.backgroundColor = NavBarConstants.barBGColor
+        innerContentView.backgroundColor = NavBarConstants.barBGColor
+        leftButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
+        rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         setNavigationBarTitle()
     }
     ///Start linear progress bar with material rendering
@@ -164,10 +150,10 @@ public extension CustomNavigationView {
     /// - Parameter
     /// - Returns:
     func startHorizontalProgressbar() {
-        self.horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
-                                                                         y: AppConstants.yPos,
-                                                                         width: self.frame.size.width,
-                                                                         height: NavBarConstants.heightForLinearBar))
+        horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
+                                                                    y: AppConstants.yPos,
+                                                                    width: self.frame.size.width,
+                                                                    height: NavBarConstants.heightForLinearBar))
         self.addSubview(horizontalProgressBar)
         horizontalProgressBar.startAnimating()
     }
@@ -175,7 +161,7 @@ public extension CustomNavigationView {
     /// - Parameter
     /// - Returns:
     func hideProgressBar() {
-        self.horizontalProgressBar.stopAnimating()
+        horizontalProgressBar.stopAnimating()
         linearBar.stopAnimation()
     }
 }

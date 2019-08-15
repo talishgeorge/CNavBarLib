@@ -11,14 +11,14 @@ import UIKit
 /// Customizable Properties for the Nav Bar.
 public struct NavBarConstants {
     /// Specify this property to determine the navigation bar background color.
-    public static var barBGColor: UIColor = UIColor.init(hexString: "#0074b1", alpha: 1.0)
+    public static var barBGColor: UIColor = UIColor.blue
     /// Specify this property to determine the navigation bar transparent background color.
     public static var transparentBGColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     /// Specify this property to determine which title color that would be used
     /// at the midst of navigation bar.
-    public static var titleColor: UIColor = UIColor.init(hexString: "#FFFFFF", alpha: 1.0)
+    public static var titleColor: UIColor = UIColor.white
     /// Specify this property to determine the navigation bar transparent title color.
-    public static var transparentTitleColor: UIColor = UIColor.init(hexString: "#fc3d39", alpha: 1.0)
+    public static var transparentTitleColor: UIColor = UIColor.white
     /// Specify this property to determine the image that would be used as
     /// the back button image.
     public static var leftNavButtonImage: UIImage = UIImage()
