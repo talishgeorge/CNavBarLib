@@ -207,11 +207,10 @@ SWIFT_CLASS("_TtC10CNavBarLib26CustomNavigationController")
 @end
 
 
-SWIFT_CLASS("_TtC10CNavBarLib21HorizontalProgressbar")
-@interface HorizontalProgressbar : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
+
+
+
+
 
 
 

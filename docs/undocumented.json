@@ -2,70 +2,91 @@
   "warnings": [
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 19,
+      "line": 7,
+      "symbol": "OnLeftButtonAction",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
+      "line": 8,
+      "symbol": "OnRightButtonAction",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
+      "line": 20,
       "symbol": "CustomNavigationController.leftNavButtonImage",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 20,
+      "line": 21,
       "symbol": "CustomNavigationController.outerContentView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 21,
+      "line": 22,
       "symbol": "CustomNavigationController.innerContentView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 22,
+      "line": 23,
       "symbol": "CustomNavigationController.leftButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 23,
+      "line": 24,
       "symbol": "CustomNavigationController.rightButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 24,
+      "line": 25,
       "symbol": "CustomNavigationController.titleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 25,
+      "line": 26,
       "symbol": "CustomNavigationController.leftTitleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "CustomNavigationController.rightTitleLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 193,
+      "line": 128,
+      "symbol": "CustomNavigationController.configureNavigationBar()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
+      "line": 185,
       "symbol": "UIView.controller()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Classes/CustomNavigationController.swift",
-      "line": 202,
+      "line": 194,
       "symbol": "UIView.navigationController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -113,94 +134,94 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Extensions/UIColor+HexColor.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/AppConstants.swift",
+      "line": 9,
+      "symbol": "ProgressType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/AppConstants.swift",
+      "line": 10,
+      "symbol": "ProgressType.determine",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/AppConstants.swift",
+      "line": 11,
+      "symbol": "ProgressType.indetermine",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/AppConstants.swift",
+      "line": 12,
+      "symbol": "ProgressType.fill",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Extensions/UIColor.swift",
       "line": 5,
       "symbol": "UIColor.init(hexString:alpha:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Extensions/UIViewController.swift",
+      "line": 11,
+      "symbol": "UIViewController.getTopViewController()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 3,
-      "symbol": "HorizontalProgressbar",
+      "symbol": "HorizontalProgressBar",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 10,
-      "symbol": "HorizontalProgressbar.hideWhenStopped",
+      "symbol": "HorizontalProgressBar.hideWhenStopped",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 11,
-      "symbol": "HorizontalProgressbar.isAnimating",
+      "symbol": "HorizontalProgressBar.isAnimating",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 18,
-      "symbol": "HorizontalProgressbar.yPos",
+      "symbol": "HorizontalProgressBar.yPos",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 19,
-      "symbol": "HorizontalProgressbar.init(frame:)",
+      "symbol": "HorizontalProgressBar.init(frame:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
       "line": 31,
-      "symbol": "HorizontalProgressbar.init(coder:)",
+      "symbol": "HorizontalProgressBar.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 87,
-      "symbol": "HorizontalProgressbar.startAnimating()",
+      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressBar.swift",
+      "line": 42,
+      "symbol": "HorizontalProgressBar.startAnimating()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 166,
-      "symbol": "HorizontalProgressbar",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 167,
-      "symbol": "HorizontalProgressbar.ProgressType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 168,
-      "symbol": "HorizontalProgressbar.ProgressType.determine",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 169,
-      "symbol": "HorizontalProgressbar.ProgressType.indetermine",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/HorizonatalProgressbar.swift",
-      "line": 170,
-      "symbol": "HorizontalProgressbar.ProgressType.fill",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
@@ -212,84 +233,84 @@
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 7,
+      "line": 6,
       "symbol": "LinearProgressBar.isAnimationRunning",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 8,
+      "line": 7,
       "symbol": "LinearProgressBar.intialWidth",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 9,
+      "line": 8,
       "symbol": "LinearProgressBar.yPos",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 10,
+      "line": 9,
       "symbol": "LinearProgressBar.backgroundProgressBarColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 11,
+      "line": 10,
       "symbol": "LinearProgressBar.progressBarColor",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 12,
+      "line": 11,
       "symbol": "LinearProgressBar.heightForLinearBar",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 13,
+      "line": 12,
       "symbol": "LinearProgressBar.widthForLinearBar",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 14,
+      "line": 13,
       "symbol": "LinearProgressBar.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 20,
+      "line": 19,
       "symbol": "LinearProgressBar.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 23,
+      "line": 22,
       "symbol": "LinearProgressBar.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 39,
+      "line": 42,
       "symbol": "LinearProgressBar.startAnimating()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Utility/LinearProgressBar.swift",
-      "line": 53,
+      "line": 60,
       "symbol": "LinearProgressBar.stopAnimation()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

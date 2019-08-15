@@ -113,41 +113,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift",
-      "line": 12,
-      "symbol": "NavBarConstants",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift",
-      "line": 38,
-      "symbol": "NavBarConstants.backgroundProgressBarColor",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift",
-      "line": 39,
-      "symbol": "NavBarConstants.progressBarColor",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift",
-      "line": 40,
-      "symbol": "NavBarConstants.heightForLinearBar",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Constants/NavBarConstants.swift",
-      "line": 41,
-      "symbol": "NavBarConstants.widthForLinearBar",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/talishgeorge/CNavBarLib/CNavBarLib/Extensions/UIColor+HexColor.swift",
       "line": 5,
       "symbol": "UIColor.init(hexString:alpha:)",
