@@ -1,6 +1,7 @@
 import UIKit
 
 class HorizontalProgressBar: UIView {
+    // MARK: - Public Stored Properties
     /// To generate dymanic Chunks under progressbar
     internal var arrProgressChunks = [UIView]()
     /// Progressbar Tint color
@@ -28,40 +29,18 @@ class HorizontalProgressBar: UIView {
             loadingStyle = .indetermine
         }
     }
+    // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    // MARK: - Private Methods
     /// Set tint color for track animation
-    func trackTintColor (tintColor: UIColor) {
+    private func trackTintColor (tintColor: UIColor) {
         trackTintColor = tintColor
     }
     /// Set background color for track
-    func progressTintColor (tintColor: UIColor) {
+    private func progressTintColor (tintColor: UIColor) {
         progressTintColor = tintColor
-    }
-    public func startAnimating() {
-        self.noOfChunks = 1
-        self.progressTintColor = NavBarConstants.progressBarColor
-        self.trackTintColor = NavBarConstants.backgroundProgressBarColor
-        self.loadingStyle = NavBarConstants.animaitonType
-        if isAnimating {
-            return
-        } else {
-            isAnimating = true
-            self.isHidden = false
-            arrProgressChunks.removeAll()
-            switch loadingStyle {
-            case .determine?:
-                configureDetermineMode()
-            case .fill?:
-                self.backgroundColor = trackTintColor
-                configureFillMode()
-            case .indetermine? :
-                configureIndetermineMode()
-            case .none:
-                break
-            }
-        }
     }
     /// To begin animation
     private func configureDetermineMode() {
@@ -100,31 +79,6 @@ class HorizontalProgressBar: UIView {
             self.addSubview(chunk)
             delay += 0.25
             self.doChunkAnimation(chunk: chunk, delay: (delay))
-        }
-    }
-    /// To stop animation
-    public func stopAnimating() {
-        if !isAnimating {
-            return
-        } else {
-            self.isHidden = self.hideWhenStopped
-            for  view: UIView in arrProgressChunks {
-                view.removeFromSuperview()
-            }
-            self.arrProgressChunks.removeAll()
-        }
-    }
-    /// Chunk animation logic
-    func doChunkAnimation (chunk: UIView, delay: TimeInterval) {
-        switch loadingStyle {
-        case .determine?:
-            strartAnimationForDetermineMode(delay, chunk)
-        case .fill?:
-            startAnimationForFillMode(delay, chunk)
-        case .indetermine?:
-            startAnimaitonForIndetermineMode(delay, chunk)
-        default:
-            break
         }
     }
     private func strartAnimationForDetermineMode(_ delay: TimeInterval, _ chunk: UIView) {
@@ -168,5 +122,55 @@ class HorizontalProgressBar: UIView {
                 self.doChunkAnimation(chunk: chunk, delay: 0.4)
             }
         })]
+    }
+    /// Chunk animation logic
+    private func doChunkAnimation (chunk: UIView, delay: TimeInterval) {
+        switch loadingStyle {
+        case .determine?:
+            strartAnimationForDetermineMode(delay, chunk)
+        case .fill?:
+            startAnimationForFillMode(delay, chunk)
+        case .indetermine?:
+            startAnimaitonForIndetermineMode(delay, chunk)
+        default:
+            break
+        }
+    }
+    // MARK: - Public Methods
+    public func startAnimating() {
+        self.noOfChunks = 1
+        self.progressTintColor = NavBarConstants.progressBarColor
+        self.trackTintColor = NavBarConstants.backgroundProgressBarColor
+        self.loadingStyle = NavBarConstants.animaitonType
+        if isAnimating {
+            return
+        } else {
+            isAnimating = true
+            self.isHidden = false
+            arrProgressChunks.removeAll()
+            switch loadingStyle {
+            case .determine?:
+                configureDetermineMode()
+            case .fill?:
+                self.backgroundColor = trackTintColor
+                configureFillMode()
+            case .indetermine? :
+                configureIndetermineMode()
+            case .none:
+                break
+            }
+        }
+    }
+    /// To stop animation
+    public func stopAnimating() {
+        if !isAnimating {
+            return
+        } else {
+            self.isHidden = self.hideWhenStopped
+            for  view: UIView in arrProgressChunks {
+                view.removeFromSuperview()
+            }
+            self.arrProgressChunks.removeAll()
+        }
     }
 }

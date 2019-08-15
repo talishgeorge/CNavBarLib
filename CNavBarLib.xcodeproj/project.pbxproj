@@ -18,7 +18,7 @@
 		83F0E5BB22EBFF7E00525600 /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F0E5B622EBFF7E00525600 /* CustomNavigationBar.xib */; };
 		83F0E5BC22EBFF7E00525600 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B722EBFF7E00525600 /* UIColor.swift */; };
 		83F0E5BD22EBFF7E00525600 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */; };
-		83F0E5BE22EBFF7E00525600 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B922EBFF7E00525600 /* CustomNavigationController.swift */; };
+		83F0E5BE22EBFF7E00525600 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */; };
 		83F0E5C022EC0A5000525600 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 83F0E5BF22EC0A5000525600 /* LICENSE */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		83F0E5B622EBFF7E00525600 /* CustomNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
 		83F0E5B722EBFF7E00525600 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
-		83F0E5B922EBFF7E00525600 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F0E5BF22EC0A5000525600 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		FE059F6ED47F587ABAD81548 /* Pods_CNavBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNavBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,7 +110,7 @@
 		831B166022FBCA8E00E11577 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				83F0E5B922EBFF7E00525600 /* CustomNavigationController.swift */,
+				83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 			files = (
 				831B165622FBC55600E11577 /* AppConstants.swift in Sources */,
 				831B165822FBC5FF00E11577 /* NavBarConstants.swift in Sources */,
-				83F0E5BE22EBFF7E00525600 /* CustomNavigationController.swift in Sources */,
+				83F0E5BE22EBFF7E00525600 /* CustomNavigationView.swift in Sources */,
 				83F0E5BC22EBFF7E00525600 /* UIColor.swift in Sources */,
 				831B164D22F965E000E11577 /* HorizonatalProgressBar.swift in Sources */,
 				83F0E5BD22EBFF7E00525600 /* LinearProgressBar.swift in Sources */,

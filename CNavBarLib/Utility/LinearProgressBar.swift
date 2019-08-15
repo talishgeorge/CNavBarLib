@@ -2,9 +2,11 @@ import Foundation
 import UIKit
 
 class LinearProgressBar: UIView {
-    fileprivate var progressBarIndicator: UIView!
+     // MARK: - Private Stored Properties
+    private var progressBarIndicator: UIView!
     var isAnimationRunning = false
     var intialWidth: CGFloat = 10
+    // MARK: - Public Stored Properties
     public var yPos: CGFloat = 0
     public var backgroundProgressBarColor: UIColor = Color.background
     public var progressBarColor: UIColor = Color.progressBar
@@ -27,19 +29,8 @@ class LinearProgressBar: UIView {
         setupViewForLandscapeMode()
         setupViewForPortraitMode()
     }
-    fileprivate func setupViewForLandscapeMode() {
-        if UIDevice.current.orientation.isLandscape {
-            self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos
-            ), size: CGSize(width: widthForLinearBar, height: self.frame.height))
-        }
-    }
-    fileprivate func setupViewForPortraitMode() {
-        if UIDevice.current.orientation.isPortrait {
-            self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos),
-                                size: CGSize(width: widthForLinearBar, height: self.frame.height))
-        }
-    }
-    open func startAnimating() {
+    // MARK: - Public Methods
+    public func startAnimating() {
         self.heightForLinearBar = NavBarConstants.heightForLinearBar
         self.backgroundProgressBarColor = NavBarConstants.backgroundProgressBarColor
         self.progressBarColor = NavBarConstants.progressBarColor
@@ -57,15 +48,28 @@ class LinearProgressBar: UIView {
             })
         }
     }
-    open func stopAnimation() {
+    public func stopAnimation() {
         self.isAnimationRunning = false
         UIView.animate(withDuration: 0.5, animations: {
             self.progressBarIndicator.frame = CGRect(x: 0, y: 0, width: self.widthForLinearBar, height: 0)
             self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.widthForLinearBar, height: 0)
         })
     }
-    fileprivate func show() {
-        if self.superview != nil {
+    // MARK: - Private Methods
+    private func setupViewForLandscapeMode() {
+        if UIDevice.current.orientation.isLandscape {
+            self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos
+            ), size: CGSize(width: widthForLinearBar, height: self.frame.height))
+        }
+    }
+    private func setupViewForPortraitMode() {
+        if UIDevice.current.orientation.isPortrait {
+            self.frame = CGRect(origin: CGPoint(x: self.frame.origin.x, y: yPos),
+                                size: CGSize(width: widthForLinearBar, height: self.frame.height))
+        }
+    }
+    private func show() {
+        guard self.superview == nil else {
             return
         }
         /// Find current top viewcontroller
@@ -74,12 +78,12 @@ class LinearProgressBar: UIView {
             superView.addSubview(self)
         }
     }
-    fileprivate func configureColors() {
+    private func configureColors() {
         self.backgroundColor = self.backgroundProgressBarColor
         self.progressBarIndicator.backgroundColor = self.progressBarColor
         self.layoutIfNeeded()
     }
-    fileprivate func configureAnimation() {
+    private func configureAnimation() {
         guard let superview = self.superview else {
             stopAnimation()
             return

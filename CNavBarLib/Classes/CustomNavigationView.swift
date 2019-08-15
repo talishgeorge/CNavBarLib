@@ -8,7 +8,7 @@ public typealias OnLeftButtonAction = ((_ success: Bool) -> Void)?
 public typealias OnRightButtonAction = ((_ success: Bool) -> Void)?
 
 ///  Fully customizable Navigation controller typically displayed at the top of the screen
-public class CustomNavigationController: UIView {
+public class CustomNavigationView: UIView {
     // MARK: - Private Stored Properties
     ///Linear activity indicator with material design
     private var linearBar: LinearProgressBar = LinearProgressBar()
@@ -27,49 +27,47 @@ public class CustomNavigationController: UIView {
     @IBOutlet weak var rightTitleLabel: UILabel!
     // MARK: - Public Stored Properties
     ///Left nav bar button action
-    public var onLeftButtonAction: OnLeftButtonAction
+    public var onLeftButtonAction: OnLeftButtonAction = nil
     ///Right nav bar button action
-    public var onRightButtonAction: OnRightButtonAction
+    public var onRightButtonAction: OnRightButtonAction = nil
     ///Protperty Observer for left nav button visibility
     /// - Parameter
     /// - Returns
-    public var isLeftTitleHidden: Bool {
+    public var isLeftTitleHidden: Bool? {
         didSet {
-            self.leftTitleLabel.isHidden = isLeftTitleHidden
+            self.leftTitleLabel.isHidden = isLeftTitleHidden ?? false
         }
     }
     ///Protperty Observer for right nav button visibility
     /// - Parameter
     /// - Returns
-    public var isRightTitleHidden: Bool {
+    public var isRightTitleHidden: Bool? {
         didSet {
-            self.rightTitleLabel.isHidden = isRightTitleHidden
+            self.rightTitleLabel.isHidden = isRightTitleHidden ?? false
         }
     }
-    // MARK: - Init
+    // MARK: - Init  
     ///This constructor/initializer will be called when we are creating view programmatically with init(frame: CGRect)
     /// - Parameter NSCoder
     /// - Returns
     public override init(frame: CGRect) {
-        self.isLeftTitleHidden = false
-        self.isRightTitleHidden = false
-        self.onLeftButtonAction = nil
-        self.onRightButtonAction = nil
         super.init(frame: frame)
     }
     ///This constructore is called when the view is unarchived from a nib.
     /// - Parameter NSCoder
     /// - Returns:
     public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    public func initializeMemberVariables() {
         self.isLeftTitleHidden = false
         self.isRightTitleHidden = false
         self.onLeftButtonAction = nil
         self.onRightButtonAction = nil
-        super.init(coder: aDecoder)
     }
 }
 // MARK: - Private Methods
-private extension CustomNavigationController {
+private extension CustomNavigationView {
     ///Configure Nav bar title
     /// - Parameter
     /// - Returns:
@@ -95,11 +93,11 @@ private extension CustomNavigationController {
     }
 }
 // MARK: - Public Methods
-public extension CustomNavigationController {
+public extension CustomNavigationView {
     /// Configure safearea layout constraints for the custom view
     /// - Parameter UILayoutGuide
     /// - Returns:
-    func setupSafeAreaGuide(guide: UILayoutGuide) {
+    func setupSafeArea(guide: UILayoutGuide) {
         AppConstants.yPos = AppConstants.osXOffSet
         if #available(iOS 11, *) {
             self.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
@@ -119,10 +117,10 @@ public extension CustomNavigationController {
     /// Load Navigation Bar
     /// - Parameter sender
     /// - Returns:Custom NavigationController
-    static func loadNavigationBar() -> CustomNavigationController {
-        let bundle =  Bundle(for: CustomNavigationController.self)
+    static func loadNavigationBar() -> CustomNavigationView {
+        let bundle =  Bundle(for: CustomNavigationView.self)
         let nib = UINib(nibName: AppConstants.nibName, bundle: bundle)
-        let custView = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationController)!
+        let custView = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
         return custView
     }
     func configureNavigationBar() {
