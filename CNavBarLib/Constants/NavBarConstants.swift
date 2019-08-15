@@ -31,7 +31,7 @@ public struct NavBarConstants {
     public static var leftRightTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 12)
     /// Specify this property to set the nav bar title
     public static var titleText: String = ""
-     /// Specify this property to set the nav bar left title
+    /// Specify this property to set the nav bar left title
     public static var leftTitleText: String = ""
     /// Specify this property to set the nav bar right title
     public static var rightTitleText: String = ""

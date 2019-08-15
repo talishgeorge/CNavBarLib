@@ -17,7 +17,7 @@ class LinearProgressBar: UIView {
                                                          size: CGSize(width: 0, height: heightForLinearBar)))
     }
     required init?(coder aDecoder: NSCoder) {
-         super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
