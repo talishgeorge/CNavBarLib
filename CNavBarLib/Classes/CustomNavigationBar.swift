@@ -16,6 +16,8 @@ public class CustomNavigationBar: UINavigationBar {
     public var onLeftButtonAction: OnLeftButtonAction = nil
     public var onRightButtonAction: OnRightButtonAction = nil
     public var  navigationBar = NavBarConstants.rootNavigationController?.navigationBar
+    private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
+    
     public func updateNavigation() {
         navigationBar = NavBarConstants.rootNavigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
@@ -85,5 +87,19 @@ public class CustomNavigationBar: UINavigationBar {
     }
     @objc func rightBarButtonTapped(sender: UIButton) {
         onRightButtonAction?(true)
+    }
+    public func startHorizontalProgressbar() {
+        let navigationBarHeight: CGFloat = (navigationBar?.frame.height)!
+        let navigationBarWidth: CGFloat = (navigationBar?.frame.width)!
+        print("HEIGHT-------->", navigationBarHeight,navigationBarWidth)
+        horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
+                                                                    y: navigationBarHeight,
+                                                                    width: navigationBarWidth,
+                                                                    height: NavBarConstants.heightForLinearBar))
+        navigationBar?.addSubview(horizontalProgressBar)
+        horizontalProgressBar.startAnimating()
+    }
+    public func hideProgressBar() {
+        horizontalProgressBar.stopAnimating()
     }
 }
