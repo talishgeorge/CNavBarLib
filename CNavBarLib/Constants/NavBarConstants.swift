@@ -45,4 +45,5 @@ public struct NavBarConstants {
     public static var widthForLinearBar: CGFloat = 0
     ///Progressbar Animation mode
     public static var animaitonType: ProgressType = .fill
+    public static var rootNavigationController: UINavigationController?
 }
