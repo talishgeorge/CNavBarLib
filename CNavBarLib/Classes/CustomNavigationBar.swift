@@ -8,16 +8,12 @@
 
 import Foundation
 
-/// It holds all required things for a type to specify the requirement of
-/// how the navigation bar with all of it's items look like and behave.
-
 public class CustomNavigationBar: UINavigationBar {
     static public let shared = CustomNavigationBar()
     public var onLeftButtonAction: OnLeftButtonAction = nil
     public var onRightButtonAction: OnRightButtonAction = nil
     public var  navigationBar = NavBarConstants.rootNavigationController?.navigationBar
     private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
-    
     public func updateNavigation() {
         navigationBar = NavBarConstants.rootNavigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
@@ -78,12 +74,6 @@ public class CustomNavigationBar: UINavigationBar {
     public func resetNavigation() {
         navigationBar?.prefersLargeTitles = false
     }
-    @objc func leftBarButtonTapped(sender: UIButton) {
-        onLeftButtonAction?(true)
-    }
-    @objc func rightBarButtonTapped(sender: UIButton) {
-        onRightButtonAction?(true)
-    }
     public func startHorizontalProgressbar() {
         let navigationBarHeight: CGFloat = (navigationBar?.frame.height)!
         let navigationBarWidth: CGFloat = (navigationBar?.frame.width)!
@@ -106,5 +96,11 @@ public class CustomNavigationBar: UINavigationBar {
             [NSAttributedString.Key.foregroundColor: UIColor.white,
              NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 30) ??
                 UIFont.systemFont(ofSize: 30)]
+    }
+    @objc func leftBarButtonTapped(sender: UIButton) {
+        onLeftButtonAction?(true)
+    }
+    @objc func rightBarButtonTapped(sender: UIButton) {
+        onRightButtonAction?(true)
     }
 }
