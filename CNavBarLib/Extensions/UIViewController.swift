@@ -8,6 +8,8 @@
 
 import Foundation
 public extension UIViewController {
+
+    /// Get Top View Controller
     func getTopViewController() -> UIViewController? {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while topController?.presentedViewController != nil {

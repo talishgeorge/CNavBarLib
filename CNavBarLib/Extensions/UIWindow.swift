@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 public extension UIWindow {
+
     /// Protperty return true, if the device is >= iPhone X
     /// - Parameter
     /// - Returns:bool value

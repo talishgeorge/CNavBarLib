@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+
 /// Customizable Properties for the Nav Bar.
 public struct NavBarConstants {
+
     /// Specify this property to determine the navigation bar background color.
     public static var barBGColor: UIColor = UIColor.blue
     /// Specify this property to determine the navigation bar transparent background color.

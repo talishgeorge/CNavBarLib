@@ -7,7 +7,10 @@
 //
 
 import Foundation
+
 extension UIApplication {
+
+    /// Get Status bar view
     var statusBarView: UIView? {
         return value(forKey: "statusBar") as? UIView
     }

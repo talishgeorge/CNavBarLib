@@ -8,12 +8,16 @@
 
 import Foundation
 
+/// Custom Navigation Bar
 public class CustomNavigationBar: UINavigationBar {
+
     static public let shared = CustomNavigationBar()
     public var onLeftButtonAction: OnLeftButtonAction = nil
     public var onRightButtonAction: OnRightButtonAction = nil
     public var  navigationBar = NavBarConstants.rootNavigationController?.navigationBar
     private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
+
+    /// Update Navigation
     public func updateNavigation() {
         navigationBar = NavBarConstants.rootNavigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
@@ -49,6 +53,15 @@ public class CustomNavigationBar: UINavigationBar {
         navigationBar?.items?.first?.leftBarButtonItems?.append(textBarButtonItem)
         //Nav Bar Right Button
         navigationBar?.items?.first?.rightBarButtonItems = []
+        configureNavBarRightItem(&imageButtonFrame, &imageButton, &imageBarButtonItem, &textBarButtonItem)
+        navigationBar?.items?.first?.rightBarButtonItems?.append(textBarButtonItem)
+    }
+
+    /// Configure NavBar RightItem
+    private func configureNavBarRightItem(_ imageButtonFrame: inout CGRect,
+                                          _ imageButton: inout UIButton,
+                                          _ imageBarButtonItem: inout UIBarButtonItem,
+                                          _ textBarButtonItem: inout UIBarButtonItem) {
         let righImage = NavBarConstants.rightNavButtonImage
         imageButtonFrame = CGRect(x: 0, y: 0, width: righImage.size.width, height: righImage.size.width)
         imageButton = UIButton(frame: imageButtonFrame)
@@ -61,8 +74,12 @@ public class CustomNavigationBar: UINavigationBar {
                                             target: self,
                                             action: #selector(rightBarButtonTapped(sender:)))
         textBarButtonItem.tintColor = NavBarConstants.titleColor
-        navigationBar?.items?.first?.rightBarButtonItems?.append(textBarButtonItem)
     }
+
+    /// Apply Theme to Navigation Bar
+    /// - Parameters:
+    ///   - opacity: CGFloat
+    ///   - color: UIColor
     public func applyTransparentBackgroundToTheNavigationBar(_ opacity: CGFloat, _ color: UIColor) {
         navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar?.shadowImage = UIImage()
@@ -71,9 +88,13 @@ public class CustomNavigationBar: UINavigationBar {
         let barView = navigationBar?.subviews.first?.subviews.first
         barView?.backgroundColor = color
     }
+
+    /// Reset Navigation
     public func resetNavigation() {
         navigationBar?.prefersLargeTitles = false
     }
+
+    /// Start Horizonatal Progress bar
     public func startHorizontalProgressbar() {
         let navigationBarHeight: CGFloat = (navigationBar?.frame.height)!
         let navigationBarWidth: CGFloat = (navigationBar?.frame.width)!
@@ -84,9 +105,14 @@ public class CustomNavigationBar: UINavigationBar {
         navigationBar?.addSubview(horizontalProgressBar)
         horizontalProgressBar.startAnimating()
     }
+
+    /// Hide Progress Bar
     public func hideProgressBar() {
         horizontalProgressBar.stopAnimating()
     }
+
+    /// Enable Larfe Title Display Mode
+    /// - Parameter color: UIColor
     public func enableLargeTitleDisplayMode(_ color: UIColor) {
         navigationBar?.prefersLargeTitles = true
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
@@ -97,9 +123,15 @@ public class CustomNavigationBar: UINavigationBar {
              NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 30) ??
                 UIFont.systemFont(ofSize: 30)]
     }
+
+    /// User Tapped back button
+    /// - Parameter sender: <#sender description#>
     @objc func leftBarButtonTapped(sender: UIButton) {
         onLeftButtonAction?(true)
     }
+
+    /// User Tapped Right button
+    /// - Parameter sender: <#sender description#>
     @objc func rightBarButtonTapped(sender: UIButton) {
         onRightButtonAction?(true)
     }

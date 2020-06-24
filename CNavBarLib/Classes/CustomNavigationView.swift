@@ -9,7 +9,9 @@ public typealias OnRightButtonAction = ((_ success: Bool) -> Void)?
 
 ///  Fully customizable Navigation controller typically displayed at the top of the screen
 public class CustomNavigationView: UIView {
+
     // MARK: - Private Stored Properties
+
     ///Linear activity indicator with material design
     private var linearBar: LinearProgressBar = LinearProgressBar()
     ///Horizon progress bar
@@ -25,11 +27,15 @@ public class CustomNavigationView: UIView {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var leftTitleLabel: UILabel!
     @IBOutlet weak var rightTitleLabel: UILabel!
+
     // MARK: - Public Stored Properties
+
     ///Left nav bar button action
     public var onLeftButtonAction: OnLeftButtonAction = nil
+
     ///Right nav bar button action
     public var onRightButtonAction: OnRightButtonAction = nil
+
     ///Protperty Observer for left nav button visibility
     /// - Parameter
     /// - Returns
@@ -38,6 +44,7 @@ public class CustomNavigationView: UIView {
             self.leftTitleLabel.isHidden = isLeftTitleHidden ?? false
         }
     }
+
     ///Protperty Observer for right nav button visibility
     /// - Parameter
     /// - Returns
@@ -46,6 +53,7 @@ public class CustomNavigationView: UIView {
             self.rightTitleLabel.isHidden = isRightTitleHidden ?? false
         }
     }
+
     // MARK: - Init  
     ///This constructor/initializer will be called when we are creating view programmatically with init(frame: CGRect)
     /// - Parameter NSCoder
@@ -53,6 +61,7 @@ public class CustomNavigationView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
+
     ///This constructore is called when the view is unarchived from a nib.
     /// - Parameter NSCoder
     /// - Returns:
@@ -60,8 +69,11 @@ public class CustomNavigationView: UIView {
         super.init(coder: aDecoder)
     }
 }
+
 // MARK: - Private Methods
+
 private extension CustomNavigationView {
+
     ///Configure Nav bar title
     /// - Parameter
     /// - Returns:
@@ -73,12 +85,14 @@ private extension CustomNavigationView {
         rightTitleLabel.textColor = NavBarConstants.titleColor
         rightTitleLabel.font = NavBarConstants.leftRightTitleFont
     }
+
     /// Invoked when user tapped right nav button
     /// - Parameter sender
     /// - Returns:
     @IBAction func userTappedRightButton(_ sender: Any) {
         onRightButtonAction?(true)
     }
+
     /// Invoked when user tapped left nav button
     /// - Parameter sender
     /// - Returns:
@@ -86,8 +100,10 @@ private extension CustomNavigationView {
         onLeftButtonAction?(true)
     }
 }
+
 // MARK: - Public Methods
 public extension CustomNavigationView {
+
     /// Configure safearea layout constraints for the custom view
     /// - Parameter UILayoutGuide
     /// - Returns:
@@ -100,6 +116,7 @@ public extension CustomNavigationView {
             AppConstants.yPos = AppConstants.defaultOffSet
         }
     }
+
     /// Load Navigation Bar
     /// - Parameter sender
     /// - Returns:Custom NavigationController
@@ -109,6 +126,8 @@ public extension CustomNavigationView {
         let customNavigationBar = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
         return customNavigationBar
     }
+
+    /// Configure Navigation Bar
     func configureNavigationBar() {
         setBackgroundColorWithAlpha(alpha: Float(AppConstants.alpha))
         leftNavButtonImage.image = NavBarConstants.leftNavButtonImage
@@ -117,6 +136,7 @@ public extension CustomNavigationView {
         leftTitleLabel.text = NavBarConstants.leftTitleText
         rightTitleLabel.text = NavBarConstants.rightTitleText
     }
+
     ///Set Transparency for the nav bar
     /// - Parameter alpha value
     /// - Returns:
@@ -128,6 +148,7 @@ public extension CustomNavigationView {
         rightButton?.setTitleColor(NavBarConstants.transparentTitleColor, for: .normal)
         setNavigationBarTitle()
     }
+
     ///Configure set bachground color for the nav bar
     /// - Parameter alpha value
     /// - Returns:
@@ -140,12 +161,14 @@ public extension CustomNavigationView {
         rightButton.setTitleColor(NavBarConstants.titleColor, for: .normal)
         setNavigationBarTitle()
     }
+
     ///Start linear progress bar with material rendering
     /// - Parameter
     /// - Returns:
     func startLinearProgressbar() {
         linearBar.startAnimating()
     }
+
     ///Start horizontal progress bar
     /// - Parameter
     /// - Returns:
@@ -157,6 +180,7 @@ public extension CustomNavigationView {
         self.addSubview(horizontalProgressBar)
         horizontalProgressBar.startAnimating()
     }
+
     ///Hide progress progress bar
     /// - Parameter
     /// - Returns:
@@ -165,7 +189,10 @@ public extension CustomNavigationView {
         linearBar.stopAnimation()
     }
 }
+
 extension UIView {
+
+    /// Controller
     public func controller() -> UIViewController? {
         if let nextViewControllerResponder = next as? UIViewController {
             return nextViewControllerResponder
@@ -175,6 +202,8 @@ extension UIView {
             return nil
         }
     }
+
+    /// Navigation Controller
     public func navigationController() -> UINavigationController? {
         if let controller = controller() {
             return controller.navigationController
