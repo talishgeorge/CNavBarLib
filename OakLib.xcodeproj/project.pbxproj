@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83F0E5A422EBFE1E00525600 /* Build configuration list for PBXProject "CNavBarLib" */;
+			buildConfigurationList = 83F0E5A422EBFE1E00525600 /* Build configuration list for PBXProject "OakLib" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -483,7 +483,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83F0E5A422EBFE1E00525600 /* Build configuration list for PBXProject "CNavBarLib" */ = {
+		83F0E5A422EBFE1E00525600 /* Build configuration list for PBXProject "OakLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83F0E5B022EBFE1E00525600 /* Debug */,

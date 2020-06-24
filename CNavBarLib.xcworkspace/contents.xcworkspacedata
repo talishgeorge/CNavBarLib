@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CNavBarLib.xcodeproj">
+      location = "group:/Users/talishgeorge/CNavBarLib/OakLib.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
