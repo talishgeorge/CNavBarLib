@@ -34,7 +34,7 @@
 		8339C1FF2303FFF60003D3A3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		83E9ECE1231B940F003177BF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		83E9ECE3231CC75F003177BF /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		83F0E5AA22EBFE1E00525600 /* CNavBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNavBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F0E5AA22EBFE1E00525600 /* OakLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OakLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNavBarLib.h; sourceTree = "<group>"; };
 		83F0E5AE22EBFE1E00525600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83F0E5B522EBFF7E00525600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		83F0E5AB22EBFE1E00525600 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83F0E5AA22EBFE1E00525600 /* CNavBarLib.framework */,
+				83F0E5AA22EBFE1E00525600 /* OakLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +177,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		83F0E5A922EBFE1E00525600 /* CNavBarLib */ = {
+		83F0E5A922EBFE1E00525600 /* OakLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83F0E5B222EBFE1E00525600 /* Build configuration list for PBXNativeTarget "CNavBarLib" */;
+			buildConfigurationList = 83F0E5B222EBFE1E00525600 /* Build configuration list for PBXNativeTarget "OakLib" */;
 			buildPhases = (
 				831B164722F7F00900E11577 /* ShellScript */,
 				AD41B224681998BA5E111849 /* [CP] Check Pods Manifest.lock */,
@@ -192,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = CNavBarLib;
+			name = OakLib;
 			productName = CNavBarLib;
-			productReference = 83F0E5AA22EBFE1E00525600 /* CNavBarLib.framework */;
+			productReference = 83F0E5AA22EBFE1E00525600 /* OakLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83F0E5A922EBFE1E00525600 /* CNavBarLib */,
+				83F0E5A922EBFE1E00525600 /* OakLib */,
 			);
 		};
 /* End PBXProject section */
@@ -446,7 +446,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CG.CNavBarLib;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OakLib;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -473,7 +473,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CG.CNavBarLib;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OakLib;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83F0E5B222EBFE1E00525600 /* Build configuration list for PBXNativeTarget "CNavBarLib" */ = {
+		83F0E5B222EBFE1E00525600 /* Build configuration list for PBXNativeTarget "OakLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83F0E5B322EBFE1E00525600 /* Debug */,

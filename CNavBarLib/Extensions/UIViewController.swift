@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 public extension UIViewController {
 
     /// Get Top View Controller

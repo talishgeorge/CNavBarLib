@@ -1,3 +1,5 @@
+import UIKit
+
 public struct AppConstants {
     internal static var nibName = "CustomNavigationBar"
     public static var osXOffSet: CGFloat = 88

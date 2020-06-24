@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Custom Navigation Bar
 public class CustomNavigationBar: UINavigationBar {
