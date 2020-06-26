@@ -2,8 +2,8 @@
 //  CNavBarLib.h
 //  CNavBarLib
 //
-//  Created by Talish George on 27/07/19.
-//  Copyright © 2019 Talish George. All rights reserved.
+//  Created by Talish George on 24/06/20.
+//  Copyright © 2020 Talish George. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

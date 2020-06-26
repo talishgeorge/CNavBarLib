@@ -1,9 +1,10 @@
 ///  CustomNavigationController.swift
-///  Created by Talish George on 08/08/19.
-///  Copyright © 2019 Talish George. All rights reserved.
+///  Created by Talish George on 24/06/20.
+///  Copyright © 2020 Talish George. All rights reserved.
 
 import Foundation
 import UIKit
+
 public typealias OnLeftButtonAction = ((_ success: Bool) -> Void)?
 public typealias OnRightButtonAction = ((_ success: Bool) -> Void)?
 
@@ -16,8 +17,9 @@ public class CustomNavigationView: UIView {
     private var linearBar: LinearProgressBar = LinearProgressBar()
     ///Horizon progress bar
     private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
+
     // MARK: - IBOutlets
-    ///IBOutlets for Nav Bar
+
     @IBOutlet weak var rightNavBarButtonImage: UIImageView!
     @IBOutlet weak var leftNavButtonImage: UIImageView!
     @IBOutlet var outerContentView: UIView!
@@ -77,7 +79,7 @@ private extension CustomNavigationView {
     ///Configure Nav bar title
     /// - Parameter
     /// - Returns:
-    private func setNavigationBarTitle() {
+    func setNavigationBarTitle() {
         titleLabel.textColor = NavBarConstants.titleColor
         titleLabel.font = NavBarConstants.titleFont
         leftTitleLabel.textColor = NavBarConstants.titleColor
@@ -85,6 +87,11 @@ private extension CustomNavigationView {
         rightTitleLabel.textColor = NavBarConstants.titleColor
         rightTitleLabel.font = NavBarConstants.leftRightTitleFont
     }
+}
+
+// MARK: - Internal Methods
+
+extension CustomNavigationView {
 
     /// Invoked when user tapped right nav button
     /// - Parameter sender
@@ -102,7 +109,18 @@ private extension CustomNavigationView {
 }
 
 // MARK: - Public Methods
+
 public extension CustomNavigationView {
+
+    /// Load Navigation Bar
+    /// - Parameter sender
+    /// - Returns:Custom NavigationController
+    static func loadNavigationBar() -> CustomNavigationView {
+        let bundle =  Bundle(for: CustomNavigationView.self)
+        let nib = UINib(nibName: AppConstants.nibName, bundle: bundle)
+        let customNavigationBar = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
+        return customNavigationBar
+    }
 
     /// Configure safearea layout constraints for the custom view
     /// - Parameter UILayoutGuide
@@ -115,16 +133,6 @@ public extension CustomNavigationView {
             self.heightAnchor.constraint(equalToConstant: AppConstants.defaultOffSet).isActive = true
             AppConstants.yPos = AppConstants.defaultOffSet
         }
-    }
-
-    /// Load Navigation Bar
-    /// - Parameter sender
-    /// - Returns:Custom NavigationController
-    static func loadNavigationBar() -> CustomNavigationView {
-        let bundle =  Bundle(for: CustomNavigationView.self)
-        let nib = UINib(nibName: AppConstants.nibName, bundle: bundle)
-        let customNavigationBar = (nib.instantiate(withOwner: self, options: nil)[0] as? CustomNavigationView)!
-        return customNavigationBar
     }
 
     /// Configure Navigation Bar
@@ -187,28 +195,5 @@ public extension CustomNavigationView {
     func hideProgressBar() {
         horizontalProgressBar.stopAnimating()
         linearBar.stopAnimation()
-    }
-}
-
-extension UIView {
-
-    /// Controller
-    public func controller() -> UIViewController? {
-        if let nextViewControllerResponder = next as? UIViewController {
-            return nextViewControllerResponder
-        } else if let nextViewResponder = next as? UIView {
-            return nextViewResponder.controller()
-        } else {
-            return nil
-        }
-    }
-
-    /// Navigation Controller
-    public func navigationController() -> UINavigationController? {
-        if let controller = controller() {
-            return controller.navigationController
-        } else {
-            return nil
-        }
     }
 }

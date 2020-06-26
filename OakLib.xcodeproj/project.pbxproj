@@ -11,14 +11,15 @@
 		831B164D22F965E000E11577 /* HorizonatalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B164C22F965E000E11577 /* HorizonatalProgressBar.swift */; };
 		831B165622FBC55600E11577 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B165522FBC55600E11577 /* AppConstants.swift */; };
 		831B165822FBC5FF00E11577 /* NavBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B165722FBC5FF00E11577 /* NavBarConstants.swift */; };
-		8339C1FE2303F1BD0003D3A3 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FD2303F1BD0003D3A3 /* UIWindow.swift */; };
-		8339C2002303FFF60003D3A3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FF2303FFF60003D3A3 /* UIViewController.swift */; };
+		8339C1FE2303F1BD0003D3A3 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FD2303F1BD0003D3A3 /* UIWindow+Extension.swift */; };
+		8339C2002303FFF60003D3A3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FF2303FFF60003D3A3 /* UIViewController+Extension.swift */; };
+		833C530E24A38D10005A2DCC /* UIVew+Exentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C530D24A38D10005A2DCC /* UIVew+Exentsion.swift */; };
 		83E9ECE2231B940F003177BF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9ECE1231B940F003177BF /* CustomNavigationBar.swift */; };
-		83E9ECE4231CC75F003177BF /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9ECE3231CC75F003177BF /* UIApplication.swift */; };
+		83E9ECE4231CC75F003177BF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9ECE3231CC75F003177BF /* UIApplication+Extension.swift */; };
 		83F0E5AF22EBFE1E00525600 /* CNavBarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F0E5BA22EBFF7E00525600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F0E5B522EBFF7E00525600 /* Assets.xcassets */; };
 		83F0E5BB22EBFF7E00525600 /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F0E5B622EBFF7E00525600 /* CustomNavigationBar.xib */; };
-		83F0E5BC22EBFF7E00525600 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B722EBFF7E00525600 /* UIColor.swift */; };
+		83F0E5BC22EBFF7E00525600 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B722EBFF7E00525600 /* UIColor+Extension.swift */; };
 		83F0E5BD22EBFF7E00525600 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */; };
 		83F0E5BE22EBFF7E00525600 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */; };
 		83F0E5C022EC0A5000525600 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 83F0E5BF22EC0A5000525600 /* LICENSE */; };
@@ -30,16 +31,17 @@
 		831B164C22F965E000E11577 /* HorizonatalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizonatalProgressBar.swift; sourceTree = "<group>"; };
 		831B165522FBC55600E11577 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		831B165722FBC5FF00E11577 /* NavBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarConstants.swift; sourceTree = "<group>"; };
-		8339C1FD2303F1BD0003D3A3 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
-		8339C1FF2303FFF60003D3A3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8339C1FD2303F1BD0003D3A3 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		8339C1FF2303FFF60003D3A3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		833C530D24A38D10005A2DCC /* UIVew+Exentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVew+Exentsion.swift"; sourceTree = "<group>"; };
 		83E9ECE1231B940F003177BF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		83E9ECE3231CC75F003177BF /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		83E9ECE3231CC75F003177BF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		83F0E5AA22EBFE1E00525600 /* OakLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OakLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNavBarLib.h; sourceTree = "<group>"; };
 		83F0E5AE22EBFE1E00525600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83F0E5B522EBFF7E00525600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83F0E5B622EBFF7E00525600 /* CustomNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
-		83F0E5B722EBFF7E00525600 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		83F0E5B722EBFF7E00525600 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F0E5BF22EC0A5000525600 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -87,10 +89,11 @@
 		831B165D22FBCA3500E11577 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				83F0E5B722EBFF7E00525600 /* UIColor.swift */,
-				8339C1FD2303F1BD0003D3A3 /* UIWindow.swift */,
-				8339C1FF2303FFF60003D3A3 /* UIViewController.swift */,
-				83E9ECE3231CC75F003177BF /* UIApplication.swift */,
+				83F0E5B722EBFF7E00525600 /* UIColor+Extension.swift */,
+				8339C1FD2303F1BD0003D3A3 /* UIWindow+Extension.swift */,
+				8339C1FF2303FFF60003D3A3 /* UIViewController+Extension.swift */,
+				83E9ECE3231CC75F003177BF /* UIApplication+Extension.swift */,
+				833C530D24A38D10005A2DCC /* UIVew+Exentsion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,12 +296,13 @@
 				831B165822FBC5FF00E11577 /* NavBarConstants.swift in Sources */,
 				83F0E5BE22EBFF7E00525600 /* CustomNavigationView.swift in Sources */,
 				83E9ECE2231B940F003177BF /* CustomNavigationBar.swift in Sources */,
-				83F0E5BC22EBFF7E00525600 /* UIColor.swift in Sources */,
+				83F0E5BC22EBFF7E00525600 /* UIColor+Extension.swift in Sources */,
 				831B164D22F965E000E11577 /* HorizonatalProgressBar.swift in Sources */,
 				83F0E5BD22EBFF7E00525600 /* LinearProgressBar.swift in Sources */,
-				8339C2002303FFF60003D3A3 /* UIViewController.swift in Sources */,
-				83E9ECE4231CC75F003177BF /* UIApplication.swift in Sources */,
-				8339C1FE2303F1BD0003D3A3 /* UIWindow.swift in Sources */,
+				8339C2002303FFF60003D3A3 /* UIViewController+Extension.swift in Sources */,
+				83E9ECE4231CC75F003177BF /* UIApplication+Extension.swift in Sources */,
+				8339C1FE2303F1BD0003D3A3 /* UIWindow+Extension.swift in Sources */,
+				833C530E24A38D10005A2DCC /* UIVew+Exentsion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

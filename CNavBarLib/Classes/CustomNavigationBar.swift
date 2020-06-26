@@ -2,8 +2,8 @@
 //  CustomNavigationBar.swift
 //  CNavBarLib
 //
-//  Created by Talish George on 01/09/19.
-//  Copyright © 2019 Talish George. All rights reserved.
+//  Created by Talish George on 24/06/20.
+//  Copyright © 2020 Talish George. All rights reserved.
 //
 
 import Foundation
@@ -17,9 +17,27 @@ public class CustomNavigationBar: UINavigationBar {
     public var onRightButtonAction: OnRightButtonAction = nil
     public var  navigationBar = NavBarConstants.rootNavigationController?.navigationBar
     private var horizontalProgressBar: HorizontalProgressBar = HorizontalProgressBar()
+}
+
+extension CustomNavigationBar {
+
+    /// User Tapped back button
+    /// - Parameter sender: UIButton
+    @objc func leftBarButtonTapped(sender: UIButton) {
+        onLeftButtonAction?(true)
+    }
+
+    /// User Tapped Right button
+    /// - Parameter sender: UIButton
+    @objc func rightBarButtonTapped(sender: UIButton) {
+        onRightButtonAction?(true)
+    }
+}
+
+public extension CustomNavigationBar {
 
     /// Update Navigation
-    public func updateNavigation() {
+    func updateNavigation() {
         navigationBar = NavBarConstants.rootNavigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
         var barView = navigationBar?.subviews.first?.subviews.first
@@ -58,6 +76,57 @@ public class CustomNavigationBar: UINavigationBar {
         navigationBar?.items?.first?.rightBarButtonItems?.append(textBarButtonItem)
     }
 
+    /// Apply Theme to Navigation Bar
+    /// - Parameters:
+    ///   - opacity: CGFloat
+    ///   - color: UIColor
+    func applyTransparentBackgroundToTheNavigationBar(_ opacity: CGFloat, _ color: UIColor) {
+        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationBar?.shadowImage = UIImage()
+        navigationBar?.isTranslucent = true
+        navigationBar?.backgroundColor = UIColor.clear
+        let barView = navigationBar?.subviews.first?.subviews.first
+        barView?.backgroundColor = color
+    }
+
+    /// Reset Navigation
+    func resetNavigation() {
+        navigationBar?.prefersLargeTitles = false
+    }
+
+    /// Start Horizonatal Progress bar
+    func startHorizontalProgressbar() {
+        let navigationBarHeight: CGFloat = (navigationBar?.frame.height)!
+        let navigationBarWidth: CGFloat = (navigationBar?.frame.width)!
+        horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
+                                                                    y: navigationBarHeight,
+                                                                    width: navigationBarWidth,
+                                                                    height: NavBarConstants.heightForLinearBar))
+        navigationBar?.addSubview(horizontalProgressBar)
+        horizontalProgressBar.startAnimating()
+    }
+
+    /// Hide Progress Bar
+    func hideProgressBar() {
+        horizontalProgressBar.stopAnimating()
+    }
+
+    /// Enable Larfe Title Display Mode
+    /// - Parameter color: UIColor
+    func enableLargeTitleDisplayMode(_ color: UIColor) {
+        navigationBar?.prefersLargeTitles = true
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+        let barView = navigationBar?.subviews.first?.subviews.first
+        barView?.backgroundColor = color
+        navigationBar?.largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 30) ??
+                UIFont.systemFont(ofSize: 30)]
+    }
+}
+
+private extension CustomNavigationBar {
+
     /// Configure NavBar RightItem
     private func configureNavBarRightItem(_ imageButtonFrame: inout CGRect,
                                           _ imageButton: inout UIButton,
@@ -75,65 +144,5 @@ public class CustomNavigationBar: UINavigationBar {
                                             target: self,
                                             action: #selector(rightBarButtonTapped(sender:)))
         textBarButtonItem.tintColor = NavBarConstants.titleColor
-    }
-
-    /// Apply Theme to Navigation Bar
-    /// - Parameters:
-    ///   - opacity: CGFloat
-    ///   - color: UIColor
-    public func applyTransparentBackgroundToTheNavigationBar(_ opacity: CGFloat, _ color: UIColor) {
-        navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar?.shadowImage = UIImage()
-        navigationBar?.isTranslucent = true
-        navigationBar?.backgroundColor = UIColor.clear
-        let barView = navigationBar?.subviews.first?.subviews.first
-        barView?.backgroundColor = color
-    }
-
-    /// Reset Navigation
-    public func resetNavigation() {
-        navigationBar?.prefersLargeTitles = false
-    }
-
-    /// Start Horizonatal Progress bar
-    public func startHorizontalProgressbar() {
-        let navigationBarHeight: CGFloat = (navigationBar?.frame.height)!
-        let navigationBarWidth: CGFloat = (navigationBar?.frame.width)!
-        horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
-                                                                    y: navigationBarHeight,
-                                                                    width: navigationBarWidth,
-                                                                    height: NavBarConstants.heightForLinearBar))
-        navigationBar?.addSubview(horizontalProgressBar)
-        horizontalProgressBar.startAnimating()
-    }
-
-    /// Hide Progress Bar
-    public func hideProgressBar() {
-        horizontalProgressBar.stopAnimating()
-    }
-
-    /// Enable Larfe Title Display Mode
-    /// - Parameter color: UIColor
-    public func enableLargeTitleDisplayMode(_ color: UIColor) {
-        navigationBar?.prefersLargeTitles = true
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
-        let barView = navigationBar?.subviews.first?.subviews.first
-        barView?.backgroundColor = color
-        navigationBar?.largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.white,
-             NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 30) ??
-                UIFont.systemFont(ofSize: 30)]
-    }
-
-    /// User Tapped back button
-    /// - Parameter sender: <#sender description#>
-    @objc func leftBarButtonTapped(sender: UIButton) {
-        onLeftButtonAction?(true)
-    }
-
-    /// User Tapped Right button
-    /// - Parameter sender: <#sender description#>
-    @objc func rightBarButtonTapped(sender: UIButton) {
-        onRightButtonAction?(true)
     }
 }

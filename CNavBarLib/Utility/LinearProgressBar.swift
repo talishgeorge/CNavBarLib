@@ -8,7 +8,9 @@ class LinearProgressBar: UIView {
     private var progressBarIndicator: UIView!
     var isAnimationRunning = false
     var intialWidth: CGFloat = 10
+
     // MARK: - Public Stored Properties
+
     public var yPos: CGFloat = 0
     public var backgroundProgressBarColor: UIColor = Color.background
     public var progressBarColor: UIColor = Color.progressBar
@@ -68,6 +70,19 @@ class LinearProgressBar: UIView {
             self.progressBarIndicator.frame = CGRect(x: 0, y: 0, width: self.widthForLinearBar, height: 0)
             self.frame = CGRect(x: 0, y: self.frame.origin.y, width: self.widthForLinearBar, height: 0)
         })
+    }
+}
+
+private extension LinearProgressBar {
+
+    struct Color {
+        static let background: UIColor = UIColor(red: 0.73, green: 0.87, blue: 0.98, alpha: 1.0)
+        static let progressBar: UIColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
+    }
+
+    struct Size {
+        static let height: CGFloat = 5
+        static let width: CGFloat = 0
     }
 
     // MARK: - Private Methods
@@ -130,16 +145,5 @@ class LinearProgressBar: UIView {
                 self.configureAnimation()
             }
         })
-    }
-}
-
-private extension LinearProgressBar {
-    struct Color {
-        static let background: UIColor = UIColor(red: 0.73, green: 0.87, blue: 0.98, alpha: 1.0)
-        static let progressBar: UIColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
-    }
-    struct Size {
-        static let height: CGFloat = 5
-        static let width: CGFloat = 0
     }
 }
