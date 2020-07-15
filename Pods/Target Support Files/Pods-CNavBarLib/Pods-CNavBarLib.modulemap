@@ -1,6 +1,0 @@
-framework module Pods_CNavBarLib {
-  umbrella header "Pods-CNavBarLib-umbrella.h"
-
-  export *
-  module * { export * }
-}

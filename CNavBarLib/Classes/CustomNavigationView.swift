@@ -132,6 +132,7 @@ public extension CustomNavigationView {
         if UIApplication.shared.keyWindow?.hasTopNotch == false {
             self.heightAnchor.constraint(equalToConstant: AppConstants.defaultOffSet).isActive = true
             AppConstants.yPos = AppConstants.defaultOffSet
+            print("Inside AppConstants.yPos \(AppConstants.yPos)")
         }
     }
 
@@ -181,6 +182,7 @@ public extension CustomNavigationView {
     /// - Parameter
     /// - Returns:
     func startHorizontalProgressbar() {
+        print("AppConstants.yPos \(AppConstants.yPos)")
         horizontalProgressBar = HorizontalProgressBar(frame: CGRect(x: 0,
                                                                     y: AppConstants.yPos,
                                                                     width: self.frame.size.width,

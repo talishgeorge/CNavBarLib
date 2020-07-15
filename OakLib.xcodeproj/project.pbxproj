@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00D2277B4CCD4FB02A8916C4 /* Pods_CNavBarLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE059F6ED47F587ABAD81548 /* Pods_CNavBarLib.framework */; };
 		831B164D22F965E000E11577 /* HorizonatalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B164C22F965E000E11577 /* HorizonatalProgressBar.swift */; };
 		831B165622FBC55600E11577 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B165522FBC55600E11577 /* AppConstants.swift */; };
 		831B165822FBC5FF00E11577 /* NavBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B165722FBC5FF00E11577 /* NavBarConstants.swift */; };
 		8339C1FE2303F1BD0003D3A3 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FD2303F1BD0003D3A3 /* UIWindow+Extension.swift */; };
 		8339C2002303FFF60003D3A3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339C1FF2303FFF60003D3A3 /* UIViewController+Extension.swift */; };
 		833C530E24A38D10005A2DCC /* UIVew+Exentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833C530D24A38D10005A2DCC /* UIVew+Exentsion.swift */; };
+		83A4360824BF7E0400F63D02 /* FBLoaf+HelperClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360324BF7E0400F63D02 /* FBLoaf+HelperClasses.swift */; };
+		83A4360924BF7E0400F63D02 /* FBLoaf+BarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360424BF7E0400F63D02 /* FBLoaf+BarStyles.swift */; };
+		83A4360A24BF7E0400F63D02 /* FBLoaf+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360524BF7E0400F63D02 /* FBLoaf+Interface.swift */; };
+		83A4360B24BF7E0400F63D02 /* FBLoaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360624BF7E0400F63D02 /* FBLoaf.swift */; };
+		83A4360C24BF7E0400F63D02 /* FBLoaf+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360724BF7E0400F63D02 /* FBLoaf+Observers.swift */; };
+		83A4361124BF7E5400F63D02 /* ActivityInidicatorViewStyle+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360E24BF7E5400F63D02 /* ActivityInidicatorViewStyle+Animation.swift */; };
+		83A4361224BF7E5400F63D02 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4360F24BF7E5400F63D02 /* ActivityIndicatorView.swift */; };
+		83A4361324BF7E5500F63D02 /* ActivityIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4361024BF7E5400F63D02 /* ActivityIndicatorViewStyle.swift */; };
 		83E9ECE2231B940F003177BF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9ECE1231B940F003177BF /* CustomNavigationBar.swift */; };
 		83E9ECE4231CC75F003177BF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9ECE3231CC75F003177BF /* UIApplication+Extension.swift */; };
 		83F0E5AF22EBFE1E00525600 /* CNavBarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F0E5AD22EBFE1E00525600 /* CNavBarLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,14 +33,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F376309163E69C820E59336 /* Pods-CNavBarLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNavBarLib.debug.xcconfig"; path = "Target Support Files/Pods-CNavBarLib/Pods-CNavBarLib.debug.xcconfig"; sourceTree = "<group>"; };
-		66F85D3F331CB7AC8738ECBD /* Pods-CNavBarLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNavBarLib.release.xcconfig"; path = "Target Support Files/Pods-CNavBarLib/Pods-CNavBarLib.release.xcconfig"; sourceTree = "<group>"; };
 		831B164C22F965E000E11577 /* HorizonatalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizonatalProgressBar.swift; sourceTree = "<group>"; };
 		831B165522FBC55600E11577 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		831B165722FBC5FF00E11577 /* NavBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarConstants.swift; sourceTree = "<group>"; };
 		8339C1FD2303F1BD0003D3A3 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		8339C1FF2303FFF60003D3A3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		833C530D24A38D10005A2DCC /* UIVew+Exentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVew+Exentsion.swift"; sourceTree = "<group>"; };
+		83A4360324BF7E0400F63D02 /* FBLoaf+HelperClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLoaf+HelperClasses.swift"; sourceTree = "<group>"; };
+		83A4360424BF7E0400F63D02 /* FBLoaf+BarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLoaf+BarStyles.swift"; sourceTree = "<group>"; };
+		83A4360524BF7E0400F63D02 /* FBLoaf+Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLoaf+Interface.swift"; sourceTree = "<group>"; };
+		83A4360624BF7E0400F63D02 /* FBLoaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoaf.swift; sourceTree = "<group>"; };
+		83A4360724BF7E0400F63D02 /* FBLoaf+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FBLoaf+Observers.swift"; sourceTree = "<group>"; };
+		83A4360E24BF7E5400F63D02 /* ActivityInidicatorViewStyle+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityInidicatorViewStyle+Animation.swift"; sourceTree = "<group>"; };
+		83A4360F24BF7E5400F63D02 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		83A4361024BF7E5400F63D02 /* ActivityIndicatorViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewStyle.swift; sourceTree = "<group>"; };
 		83E9ECE1231B940F003177BF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		83E9ECE3231CC75F003177BF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		83F0E5AA22EBFE1E00525600 /* OakLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OakLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +58,6 @@
 		83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		83F0E5B922EBFF7E00525600 /* CustomNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F0E5BF22EC0A5000525600 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		FE059F6ED47F587ABAD81548 /* Pods_CNavBarLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNavBarLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D2277B4CCD4FB02A8916C4 /* Pods_CNavBarLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +74,6 @@
 		16A10A68A2597E3FEADBE5A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F376309163E69C820E59336 /* Pods-CNavBarLib.debug.xcconfig */,
-				66F85D3F331CB7AC8738ECBD /* Pods-CNavBarLib.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -80,6 +89,8 @@
 		831B165C22FBCA2000E11577 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				83A4360D24BF7E2600F63D02 /* ActivityIndicator */,
+				83A4360224BF7DC200F63D02 /* Loaf */,
 				83F0E5B822EBFF7E00525600 /* LinearProgressBar.swift */,
 				831B164C22F965E000E11577 /* HorizonatalProgressBar.swift */,
 			);
@@ -124,13 +135,34 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		83A4360224BF7DC200F63D02 /* Loaf */ = {
+			isa = PBXGroup;
+			children = (
+				83A4360624BF7E0400F63D02 /* FBLoaf.swift */,
+				83A4360424BF7E0400F63D02 /* FBLoaf+BarStyles.swift */,
+				83A4360324BF7E0400F63D02 /* FBLoaf+HelperClasses.swift */,
+				83A4360524BF7E0400F63D02 /* FBLoaf+Interface.swift */,
+				83A4360724BF7E0400F63D02 /* FBLoaf+Observers.swift */,
+			);
+			path = Loaf;
+			sourceTree = "<group>";
+		};
+		83A4360D24BF7E2600F63D02 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				83A4360F24BF7E5400F63D02 /* ActivityIndicatorView.swift */,
+				83A4361024BF7E5400F63D02 /* ActivityIndicatorViewStyle.swift */,
+				83A4360E24BF7E5400F63D02 /* ActivityInidicatorViewStyle+Animation.swift */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
 		83F0E5A022EBFE1E00525600 = {
 			isa = PBXGroup;
 			children = (
 				83F0E5AC22EBFE1E00525600 /* CNavBarLib */,
 				83F0E5AB22EBFE1E00525600 /* Products */,
 				16A10A68A2597E3FEADBE5A7 /* Pods */,
-				C8866D1CB812D78B8AC96060 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,14 +190,6 @@
 			path = CNavBarLib;
 			sourceTree = "<group>";
 		};
-		C8866D1CB812D78B8AC96060 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE059F6ED47F587ABAD81548 /* Pods_CNavBarLib.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -185,7 +209,6 @@
 			buildConfigurationList = 83F0E5B222EBFE1E00525600 /* Build configuration list for PBXNativeTarget "OakLib" */;
 			buildPhases = (
 				831B164722F7F00900E11577 /* ShellScript */,
-				AD41B224681998BA5E111849 /* [CP] Check Pods Manifest.lock */,
 				83F0E5A522EBFE1E00525600 /* Headers */,
 				83F0E5A622EBFE1E00525600 /* Sources */,
 				83F0E5A722EBFE1E00525600 /* Frameworks */,
@@ -261,29 +284,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		AD41B224681998BA5E111849 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CNavBarLib-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -293,14 +295,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				831B165622FBC55600E11577 /* AppConstants.swift in Sources */,
+				83A4360C24BF7E0400F63D02 /* FBLoaf+Observers.swift in Sources */,
+				83A4360A24BF7E0400F63D02 /* FBLoaf+Interface.swift in Sources */,
 				831B165822FBC5FF00E11577 /* NavBarConstants.swift in Sources */,
 				83F0E5BE22EBFF7E00525600 /* CustomNavigationView.swift in Sources */,
+				83A4360924BF7E0400F63D02 /* FBLoaf+BarStyles.swift in Sources */,
 				83E9ECE2231B940F003177BF /* CustomNavigationBar.swift in Sources */,
+				83A4360824BF7E0400F63D02 /* FBLoaf+HelperClasses.swift in Sources */,
+				83A4361124BF7E5400F63D02 /* ActivityInidicatorViewStyle+Animation.swift in Sources */,
 				83F0E5BC22EBFF7E00525600 /* UIColor+Extension.swift in Sources */,
 				831B164D22F965E000E11577 /* HorizonatalProgressBar.swift in Sources */,
 				83F0E5BD22EBFF7E00525600 /* LinearProgressBar.swift in Sources */,
 				8339C2002303FFF60003D3A3 /* UIViewController+Extension.swift in Sources */,
 				83E9ECE4231CC75F003177BF /* UIApplication+Extension.swift in Sources */,
+				83A4360B24BF7E0400F63D02 /* FBLoaf.swift in Sources */,
+				83A4361324BF7E5500F63D02 /* ActivityIndicatorViewStyle.swift in Sources */,
+				83A4361224BF7E5400F63D02 /* ActivityIndicatorView.swift in Sources */,
 				8339C1FE2303F1BD0003D3A3 /* UIWindow+Extension.swift in Sources */,
 				833C530E24A38D10005A2DCC /* UIVew+Exentsion.swift in Sources */,
 			);
@@ -313,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -377,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -433,7 +445,6 @@
 		};
 		83F0E5B322EBFE1E00525600 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F376309163E69C820E59336 /* Pods-CNavBarLib.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -460,7 +471,6 @@
 		};
 		83F0E5B422EBFE1E00525600 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66F85D3F331CB7AC8738ECBD /* Pods-CNavBarLib.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
